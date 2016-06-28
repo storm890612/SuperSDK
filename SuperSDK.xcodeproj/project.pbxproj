@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
+		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
 		A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265881D22E1500022D6AC /* AppDelegate.m */; };
 		A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2658B1D22E1500022D6AC /* ViewController.m */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A84B81FC1D22F0E500DD3513 /* UINavigationController+SNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SNavigationController.h"; sourceTree = "<group>"; };
+		A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SNavigationController.m"; sourceTree = "<group>"; };
+		A84B81FF1D22F0F200DD3513 /* SWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWebViewController.h; sourceTree = "<group>"; };
+		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
 		A8F265811D22E1500022D6AC /* SuperSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F265851D22E1500022D6AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F265871D22E1500022D6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +165,8 @@
 		A8F265B91D22E2410022D6AC /* SuperNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				A84B81FC1D22F0E500DD3513 /* UINavigationController+SNavigationController.h */,
+				A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */,
 			);
 			path = SuperNavigation;
 			sourceTree = "<group>";
@@ -175,6 +183,8 @@
 		A8F265BB1D22E73C0022D6AC /* SuperWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A84B81FF1D22F0F200DD3513 /* SWebViewController.h */,
+				A84B82001D22F0F200DD3513 /* SWebViewController.m */,
 			);
 			name = SuperWebViewController;
 			sourceTree = "<group>";
@@ -309,6 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */,
+				A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */,
+				A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */,
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A8F265861D22E1500022D6AC /* main.m in Sources */,
 				A8F265BE1D22E8420022D6AC /* STools.m in Sources */,
@@ -516,6 +528,7 @@
 				A8F265B01D22E1510022D6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8F265B11D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				A8F265B31D22E1510022D6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8F265B41D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +546,7 @@
 				A8F265B61D22E1510022D6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
