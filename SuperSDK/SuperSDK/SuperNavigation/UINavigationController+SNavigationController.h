@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationController(SNavigationController)
-// push到下一个页面的时候是否隐藏tabBar
-//@property (nonatomic, assign) BOOL afterPushHideTabbar;
 - (void)gotoPage:(NSString *)pageName;
 - (void)gotoPage:(NSString *)pageName param:(NSDictionary *)param;
 - (void)gotoPage:(NSString *)pageName param:(NSDictionary *)param animated:(BOOL)animated;
@@ -29,4 +27,9 @@
 - (void)backToPage:(NSString *)pageName animated:(BOOL)animated;
 - (void)backToPage:(NSString *)pageName param:(NSDictionary *)param;
 - (void)backToPage:(NSString *)pageName param:(NSDictionary *)param animated:(BOOL)animated;
+
+- (void)backPageToIndex:(NSInteger)index;
+- (void)backPageToIndex:(NSInteger)index animated:(BOOL)animated;
+- (void)backPageToIndex:(NSInteger)index param:(NSDictionary *)param;
+- (void)backPageToIndex:(NSInteger)index param:(NSDictionary *)param animated:(BOOL)animated;
 @end

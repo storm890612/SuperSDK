@@ -9,14 +9,14 @@
 #import <objc/runtime.h>
 #import "SWebViewController.h"
 @interface SWebViewController ()
+@property (nonatomic, strong) UIBarButtonItem *backItem;
+@property (nonatomic, strong) UIBarButtonItem *closeItem;
+
 @end
 
 @implementation SWebViewController
 
 #pragma mark - private
-
-
-
 - (instancetype)init
 {
     self = [super init];
@@ -36,8 +36,6 @@
 }
 
 #pragma mark - UIWebViewDelegate
-
-
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [self setBackButton];
@@ -78,22 +76,14 @@
          [cookieStorage setCookie:cookie];
          */
         
-        // header
-        /*
          NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.URLString]];
          [request addValue:@"tokenValue" forHTTPHeaderField:@"token"];
          [self.webView loadRequest:request];
-         */
-        
     }
 }
 
 #pragma mark -
 #pragma mark Constructor And Destructor
-
-
-
-
 
 - (void)viewDidLoad
 {
@@ -112,16 +102,11 @@
 	[self loadRequest];
 }
 - (void)setBackButton {
-    /*
-     UIBarButtonItem *backItem = [UIBarButtonItem hwjBarButtonItemWithType:HWJBarButtonItemTypeBack target:self action:@selector(touchBack:)];
-     UIBarButtonItem *closeItem = [UIBarButtonItem hwjBarButtonItemWithImage:[UIImage imageNamed:@"close_web"] target:self action:@selector(touchClose:)];
      if ([self.webView canGoBack]) {
-     [self.navigationItem setLeftBarButtonItems:@[backItem,closeItem]];
+         [self.navigationItem setLeftBarButtonItems:@[self.backItem, self.closeItem]];
      } else {
-     [self.navigationItem setLeftBarButtonItems:@[backItem]];
+         [self.navigationItem setLeftBarButtonItems:@[self.backItem]];
      }
-     */
-    
 }
 - (void)touchBack:(UIBarButtonItem *)item {
     if ([self.webView canGoBack]) {
@@ -141,5 +126,16 @@
     self.webView.delegate = nil;
     self.webView = nil;
 }
-
+- (UIBarButtonItem *)backItem {
+    if (!_backItem) {
+        _backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(touchBack:)];
+    }
+    return _backItem;
+}
+- (UIBarButtonItem *)closeItem {
+    if (!_closeItem) {
+        _closeItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain  target:self action:@selector(touchClose:)];
+    }
+    return _closeItem;
+}
 @end
