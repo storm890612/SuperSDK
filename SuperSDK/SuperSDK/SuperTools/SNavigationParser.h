@@ -22,7 +22,6 @@
 
 @property (nonatomic,   copy) NSString *URLSchemes;
 
-
 + (instancetype)sharedNavigationParser;
 
 @end

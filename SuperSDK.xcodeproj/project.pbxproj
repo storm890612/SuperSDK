@@ -10,6 +10,7 @@
 		A84983441D24B0BB00DB048C /* SNavigationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983431D24B0BB00DB048C /* SNavigationParser.m */; };
 		A84983481D251E8100DB048C /* SQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983471D251E8100DB048C /* SQRView.m */; };
 		A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */; };
+		A849834E1D316F1800DB048C /* SNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834D1D316F1800DB048C /* SNetworkingManager.m */; };
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
@@ -45,6 +46,8 @@
 		A84983471D251E8100DB048C /* SQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRView.m; sourceTree = "<group>"; };
 		A84983491D2ACB9E00DB048C /* UIViewController+SViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SViewController.h"; sourceTree = "<group>"; };
 		A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SViewController.m"; sourceTree = "<group>"; };
+		A849834C1D316F1800DB048C /* SNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNetworkingManager.h; sourceTree = "<group>"; };
+		A849834D1D316F1800DB048C /* SNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNetworkingManager.m; sourceTree = "<group>"; };
 		A84B81FC1D22F0E500DD3513 /* UINavigationController+SNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SNavigationController.h"; sourceTree = "<group>"; };
 		A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SNavigationController.m"; sourceTree = "<group>"; };
 		A84B81FF1D22F0F200DD3513 /* SWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWebViewController.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 		A8F265B81D22E1B20022D6AC /* SuperNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				A849834C1D316F1800DB048C /* SNetworkingManager.h */,
+				A849834D1D316F1800DB048C /* SNetworkingManager.m */,
 			);
 			path = SuperNetworking;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */,
 				A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */,
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
+				A849834E1D316F1800DB048C /* SNetworkingManager.m in Sources */,
 				A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */,
 				A8F265861D22E1500022D6AC /* main.m in Sources */,
 				A84983481D251E8100DB048C /* SQRView.m in Sources */,

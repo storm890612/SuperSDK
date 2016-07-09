@@ -75,7 +75,6 @@
          NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
          [cookieStorage setCookie:cookie];
          */
-        
          NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.URLString]];
          [request addValue:@"tokenValue" forHTTPHeaderField:@"token"];
          [self.webView loadRequest:request];

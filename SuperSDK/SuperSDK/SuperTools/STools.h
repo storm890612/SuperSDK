@@ -10,4 +10,5 @@
 
 @interface STools : NSObject
 + (void)addUserAgentWithName:(NSString *)name;
+
 @end
