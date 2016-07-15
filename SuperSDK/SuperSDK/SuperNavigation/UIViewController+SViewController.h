@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (SViewController)
-@property (nonatomic, strong) NSDictionary *s_param;
+@property (nonatomic, strong) NSDictionary *s_parameters;
 @end

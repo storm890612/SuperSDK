@@ -10,8 +10,8 @@
 #import <UIKit/UIKit.h>
 @interface NSString (SNavigationParser)
 - (BOOL)isURL;
-// 获取URLSchemes里面的pageName 和 param
-- (void)getPageName:(NSString **)pageName pageParam:(NSDictionary **)pageParam;
+// 获取URLSchemes里面的pageName 和 Parameters
+- (void)getPageName:(NSString **)pageName pageParameters:(NSDictionary **)pageParameters;
 // 会自动添加前缀和后缀
 - (NSString *)addPrefixAndSuffix;
 @end

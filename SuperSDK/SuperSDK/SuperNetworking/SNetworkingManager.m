@@ -7,7 +7,9 @@
 //
 
 #import "SNetworkingManager.h"
-
+#import "STools.h"
 @implementation SNetworkingManager
++ (void)requestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target successAction:(SEL)successAction failureAction:(SEL)failureAction {
 
+}
 @end

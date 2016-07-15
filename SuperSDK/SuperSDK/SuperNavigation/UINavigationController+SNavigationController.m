@@ -9,22 +9,22 @@
 #import "UINavigationController+SNavigationController.h"
 #import "SNavigationParser.h"
 #import "SWebViewController.h"
-static NSString *s_param_key = @"s_param";
+static NSString *s_parameters_key = @"s_parameters";
 @implementation UINavigationController (SNavigationController)
 
 
 - (void)gotoPage:(NSString *)pageName
 {
-    [self gotoPage:pageName param:nil animated:YES];
+    [self gotoPage:pageName parameters:nil animated:YES];
 }
-- (void)gotoPage:(NSString *)pageName param:(NSDictionary *)param
+- (void)gotoPage:(NSString *)pageName parameters:(NSDictionary *)parameters
 {
-    [self gotoPage:pageName param:param animated:YES];
+    [self gotoPage:pageName parameters:parameters animated:YES];
 }
-- (void)gotoPage:(NSString *)pageName param:(NSDictionary *)param animated:(BOOL)animated
+- (void)gotoPage:(NSString *)pageName parameters:(NSDictionary *)parameters animated:(BOOL)animated
 {
     NSString *vcName;
-    NSDictionary *vcParam;
+    NSDictionary *vcParameters;
 
     UIViewController *vc;
     if ([pageName isURL]) {
@@ -32,7 +32,7 @@ static NSString *s_param_key = @"s_param";
         webVC.URLString = pageName;
         vc = webVC;
     } else {
-        [pageName getPageName:&vcName pageParam:&vcParam];
+        [pageName getPageName:&vcName pageParameters:&vcParameters];
         if (vcName.length == 0) {
             vcName = [pageName addPrefixAndSuffix];
         }
@@ -42,32 +42,32 @@ static NSString *s_param_key = @"s_param";
     if (!vc) {
         return;
     }
-    if (vcParam) {
-        [vc setValue:vcParam forKey:s_param_key];
+    if (vcParameters) {
+        [vc setValue:vcParameters forKey:s_parameters_key];
     } else {
-        [vc setValue:param forKey:s_param_key];
+        [vc setValue:parameters forKey:s_parameters_key];
     }
     [self pushViewController:vc animated:animated];
 }
 #pragma mark-----BackPage
 - (void)backPage
 {
-    [self backPageWithParam:nil animated:YES];
+    [self backPageWithParameters:nil animated:YES];
 }
 - (void)backPageWithAnimated:(BOOL)animated
 {
-    [self backPageWithParam:nil animated:animated];
+    [self backPageWithParameters:nil animated:animated];
 }
-- (void)backPageWithParam:(NSDictionary *)param
+- (void)backPageWithparameters:(NSDictionary *)parameters
 {
-    [self backPageWithParam:param animated:YES];
+    [self backPageWithParameters:parameters animated:YES];
 }
-- (void)backPageWithParam:(NSDictionary *)param animated:(BOOL)animated
+- (void)backPageWithParameters:(NSDictionary *)parameters animated:(BOOL)animated
 {
     NSArray *viewControllers = self.viewControllers;
     if (viewControllers.count > 1) {
         UIViewController *vc = viewControllers[viewControllers.count - 2];
-        [vc setValue:param forKey:s_param_key];
+        [vc setValue:parameters forKey:s_parameters_key];
         [self popToViewController:vc animated:animated];
     }
 }
@@ -75,44 +75,44 @@ static NSString *s_param_key = @"s_param";
 
 - (void)backToRootPage
 {
-    [self backToRootPageWithWithParam:nil animated:YES];
+    [self backToRootPageWithWithParameters:nil animated:YES];
 }
 - (void)backToRootPageWithAnimated:(BOOL)animated
 {
-    [self backToRootPageWithWithParam:nil animated:animated];
+    [self backToRootPageWithWithParameters:nil animated:animated];
 }
-- (void)backToRootPageWithParam:(NSDictionary *)param
+- (void)backToRootPageWithParameters:(NSDictionary *)parameters
 {
-    [self backToRootPageWithWithParam:param animated:YES];
+    [self backToRootPageWithWithParameters:parameters animated:YES];
 }
-- (void)backToRootPageWithWithParam:(NSDictionary *)param animated:(BOOL)animated
+- (void)backToRootPageWithWithParameters:(NSDictionary *)parameters animated:(BOOL)animated
 {
     NSArray *viewControllers = self.viewControllers;
     UIViewController *vc = [viewControllers firstObject];
-    [vc setValue:param forKey:s_param_key];
+    [vc setValue:parameters forKey:s_parameters_key];
     [self popToViewController:vc animated:animated];
 }
 #pragma mark-----backToPage
 
 - (void)backToPage:(NSString *)pageName
 {
-    [self backToPage:pageName param:nil animated:YES];
+    [self backToPage:pageName parameters:nil animated:YES];
 }
 - (void)backToPage:(NSString *)pageName animated:(BOOL)animated
 {
-    [self backToPage:pageName param:nil animated:animated];
+    [self backToPage:pageName parameters:nil animated:animated];
 }
-- (void)backToPage:(NSString *)pageName param:(NSDictionary *)param
+- (void)backToPage:(NSString *)pageName parameters:(NSDictionary *)parameters
 {
-    [self backToPage:pageName param:param animated:YES];
+    [self backToPage:pageName parameters:parameters animated:YES];
 }
-- (void)backToPage:(NSString *)pageName param:(NSDictionary *)param animated:(BOOL)animated
+- (void)backToPage:(NSString *)pageName parameters:(NSDictionary *)parameters animated:(BOOL)animated
 {
     NSArray *viewControllers = self.viewControllers;
     UIViewController *vc;
     NSString *vcName;
-    NSDictionary *vcParam;
-    [pageName getPageName:&vcName pageParam:&vcParam];
+    NSDictionary *vcParameters;
+    [pageName getPageName:&vcName pageParameters:&vcParameters];
     if (vcName.length == 0) {
         vcName = [pageName addPrefixAndSuffix];
     }
@@ -123,7 +123,7 @@ static NSString *s_param_key = @"s_param";
             break;
         }
     }
-    [vc setValue:param forKey:s_param_key];
+    [vc setValue:parameters forKey:s_parameters_key];
     [self popToViewController:vc animated:animated];
 
 }
@@ -131,24 +131,24 @@ static NSString *s_param_key = @"s_param";
 
 - (void)backPageToIndex:(NSInteger)index
 {
-    [self backPageToIndex:index param:nil animated:YES];
+    [self backPageToIndex:index parameters:nil animated:YES];
 }
 - (void)backPageToIndex:(NSInteger)index animated:(BOOL)animated
 {
-    [self backPageToIndex:index param:nil animated:animated];
+    [self backPageToIndex:index parameters:nil animated:animated];
 }
-- (void)backPageToIndex:(NSInteger)index param:(NSDictionary *)param
+- (void)backPageToIndex:(NSInteger)index parameters:(NSDictionary *)parameters
 {
-    [self backPageToIndex:index param:param animated:YES];
+    [self backPageToIndex:index parameters:parameters animated:YES];
 }
-- (void)backPageToIndex:(NSInteger)index param:(NSDictionary *)param animated:(BOOL)animated
+- (void)backPageToIndex:(NSInteger)index parameters:(NSDictionary *)parameters animated:(BOOL)animated
 {
     NSArray *viewControllers = self.viewControllers;
     if (viewControllers.count <= index) {
         return;
     }
     UIViewController *vc = viewControllers[index];
-    [vc setValue:param forKey:s_param_key];
+    [vc setValue:parameters forKey:s_parameters_key];
     [self popToViewController:vc animated:animated];
 }
 @end

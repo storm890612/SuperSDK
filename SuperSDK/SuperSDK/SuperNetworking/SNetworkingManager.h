@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface SNetworkingManager : NSObject
-+ (void)requestByName:(NSString *)name param:(NSDictionary *)param target:(id)target successAction:(SEL)successAction failureAction:(SEL)failureAction;
++ (void)requestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target successAction:(SEL)successAction failureAction:(SEL)failureAction;
 
 @end

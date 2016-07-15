@@ -11,9 +11,9 @@
 - (BOOL)isURL {
     return [self hasPrefix:@"http"];
 }
-- (void)getPageName:(NSString **)pageName pageParam:(NSDictionary **)pageParam {
+- (void)getPageName:(NSString **)pageName pageParameters:(NSDictionary **)pageParameters {
     NSString *name = nil;
-    NSMutableDictionary *param = nil;
+    NSMutableDictionary *parameters = nil;
     
     if (![self hasPrefix:[SNavigationParser sharedNavigationParser].URLSchemes]) {
         return;
@@ -30,18 +30,18 @@
     } else {
         name = [self substringWithRange:NSMakeRange(location, self.length - location - range2.location)];
         NSString *URLQuery = [self substringFromIndex:range2.location + range2.length];
-        NSArray *URLParamArray = [URLQuery componentsSeparatedByString:@"&"];
-        param = [[NSMutableDictionary alloc] init];
-        for (NSString *paramString in URLParamArray) {
-            NSRange range = [paramString rangeOfString:@"="];
-            NSString *key = [paramString substringToIndex:range.location];
-            NSString *value = [paramString substringFromIndex:range.location + 1]; // +1 是为了去掉 "="
-            [param setObject:value forKey:key];
+        NSArray *URLParametersArray = [URLQuery componentsSeparatedByString:@"&"];
+        parameters = [[NSMutableDictionary alloc] init];
+        for (NSString *parametersString in URLParametersArray) {
+            NSRange range = [parametersString rangeOfString:@"="];
+            NSString *key = [parametersString substringToIndex:range.location];
+            NSString *value = [parametersString substringFromIndex:range.location + 1]; // +1 是为了去掉 "="
+            [parameters setObject:value forKey:key];
         }
     }
     [name addPrefixAndSuffix];
     *pageName = name;
-    *pageParam = param;
+    *pageParameters = parameters;
 }
 - (NSString *)addPrefixAndSuffix {
     NSString *name = self;
