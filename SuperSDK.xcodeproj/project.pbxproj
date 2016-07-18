@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A84983481D251E8100DB048C /* SQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983471D251E8100DB048C /* SQRView.m */; };
 		A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */; };
-		A849834E1D316F1800DB048C /* SNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834D1D316F1800DB048C /* SNetworkingManager.m */; };
+		A849834E1D316F1800DB048C /* SRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834D1D316F1800DB048C /* SRequestManager.m */; };
 		A84983511D32BCB000DB048C /* SNavigationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983501D32BCB000DB048C /* SNavigationParser.m */; };
 		A84983541D32BE8000DB048C /* SRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983531D32BE8000DB048C /* SRequest.m */; };
 		A84983691D32BFB200DB048C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983571D32BFB200DB048C /* AFHTTPRequestOperation.m */; };
@@ -21,6 +21,7 @@
 		A849836F1D32BFB200DB048C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983641D32BFB200DB048C /* AFURLRequestSerialization.m */; };
 		A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983661D32BFB200DB048C /* AFURLResponseSerialization.m */; };
 		A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983681D32BFB200DB048C /* AFURLSessionManager.m */; };
+		A84983741D3BEAA600DB048C /* NSObject+SRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983731D3BEAA600DB048C /* NSObject+SRequest.m */; };
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
@@ -54,8 +55,8 @@
 		A84983471D251E8100DB048C /* SQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRView.m; sourceTree = "<group>"; };
 		A84983491D2ACB9E00DB048C /* UIViewController+SViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SViewController.h"; sourceTree = "<group>"; };
 		A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SViewController.m"; sourceTree = "<group>"; };
-		A849834C1D316F1800DB048C /* SNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNetworkingManager.h; sourceTree = "<group>"; };
-		A849834D1D316F1800DB048C /* SNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNetworkingManager.m; sourceTree = "<group>"; };
+		A849834C1D316F1800DB048C /* SRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRequestManager.h; sourceTree = "<group>"; };
+		A849834D1D316F1800DB048C /* SRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRequestManager.m; sourceTree = "<group>"; };
 		A849834F1D32BCB000DB048C /* SNavigationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationParser.h; sourceTree = "<group>"; };
 		A84983501D32BCB000DB048C /* SNavigationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNavigationParser.m; sourceTree = "<group>"; };
 		A84983521D32BE8000DB048C /* SRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRequest.h; sourceTree = "<group>"; };
@@ -79,6 +80,8 @@
 		A84983661D32BFB200DB048C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		A84983671D32BFB200DB048C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A84983681D32BFB200DB048C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		A84983721D3BEAA600DB048C /* NSObject+SRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SRequest.h"; sourceTree = "<group>"; };
+		A84983731D3BEAA600DB048C /* NSObject+SRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SRequest.m"; sourceTree = "<group>"; };
 		A84B81FC1D22F0E500DD3513 /* UINavigationController+SNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+SNavigationController.h"; sourceTree = "<group>"; };
 		A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SNavigationController.m"; sourceTree = "<group>"; };
 		A84B81FF1D22F0F200DD3513 /* SWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWebViewController.h; sourceTree = "<group>"; };
@@ -238,10 +241,12 @@
 		A8F265B81D22E1B20022D6AC /* SuperNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				A849834C1D316F1800DB048C /* SNetworkingManager.h */,
-				A849834D1D316F1800DB048C /* SNetworkingManager.m */,
+				A849834C1D316F1800DB048C /* SRequestManager.h */,
+				A849834D1D316F1800DB048C /* SRequestManager.m */,
 				A84983521D32BE8000DB048C /* SRequest.h */,
 				A84983531D32BE8000DB048C /* SRequest.m */,
+				A84983721D3BEAA600DB048C /* NSObject+SRequest.h */,
+				A84983731D3BEAA600DB048C /* NSObject+SRequest.m */,
 			);
 			path = SuperNetworking;
 			sourceTree = "<group>";
@@ -413,9 +418,10 @@
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,
 				A849836B1D32BFB200DB048C /* AFHTTPSessionManager.m in Sources */,
-				A849834E1D316F1800DB048C /* SNetworkingManager.m in Sources */,
+				A849834E1D316F1800DB048C /* SRequestManager.m in Sources */,
 				A849836C1D32BFB200DB048C /* AFNetworkReachabilityManager.m in Sources */,
 				A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */,
+				A84983741D3BEAA600DB048C /* NSObject+SRequest.m in Sources */,
 				A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */,
 				A849836F1D32BFB200DB048C /* AFURLRequestSerialization.m in Sources */,
 				A849836E1D32BFB200DB048C /* AFURLConnectionOperation.m in Sources */,
