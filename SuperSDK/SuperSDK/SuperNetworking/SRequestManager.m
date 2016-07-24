@@ -9,9 +9,6 @@
 #import "SRequestManager.h"
 #import "STools.h"
 @implementation SRequestManager
-- (void)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
-
-}
 + (instancetype)sharedManager {
     static SRequestManager *_sharedManager = nil;
     static dispatch_once_t onceToken;
@@ -21,4 +18,11 @@
     
     return _sharedManager;
 }
++ (SRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
+    
+}
+- (SRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
+    
+}
+
 @end

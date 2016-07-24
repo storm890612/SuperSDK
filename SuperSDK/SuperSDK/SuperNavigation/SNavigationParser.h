@@ -23,5 +23,5 @@
 @property (nonatomic,   copy) NSString *URLSchemes;
 
 + (instancetype)sharedNavigationParser;
-
++ (void)setPrefix:(NSString *)prefix suffix:(NSString *)suffix URLSchemes:(NSString *)URLSchemes;
 @end

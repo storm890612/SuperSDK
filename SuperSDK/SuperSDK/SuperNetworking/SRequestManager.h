@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SRequest.h"
 
 @interface SRequestManager : NSObject
 + (instancetype)sharedManager;
-- (void)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
++ (SRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
 
 @end
