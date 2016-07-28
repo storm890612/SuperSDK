@@ -6,8 +6,8 @@
 //  Copyright © 2016年 SuperMan. All rights reserved.
 //
 
-#import "NSObject+SRequest.h"
+#import "NSObject+SDataRequestManager.h"
 
-@implementation NSObject (SRequest)
+@implementation NSObject (SDataRequestManager)
 
 @end

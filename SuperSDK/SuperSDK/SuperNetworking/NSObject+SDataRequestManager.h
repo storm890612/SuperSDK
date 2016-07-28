@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SRequest.h"
-@interface NSObject (SRequest)
-- (SRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters action:(SEL)action;
+#import "SDataRequest.h"
+@interface NSObject (SDataRequestManager)
+- (SDataRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters action:(SEL)action;
 - (void)cancelAllRequest;
 @end

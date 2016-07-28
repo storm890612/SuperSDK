@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SRequest.h"
+#import "SDataRequest.h"
 
-@interface SRequestManager : NSObject
+@interface SDataRequestManager : NSObject
 + (instancetype)sharedManager;
-+ (SRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
++ (SDataRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
 
 @end
