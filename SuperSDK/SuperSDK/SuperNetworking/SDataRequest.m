@@ -8,27 +8,51 @@
 
 #import "SDataRequest.h"
 @interface SDataRequest ()
+@property (nonatomic, readwrite, assign) SDataRequestState state;                // 请求的状态
+@property (nonatomic, readwrite, strong) id responseData;                        // 请求返回的对象
+@property (nonatomic, readwrite,   copy) NSDictionary *parameters;               // 请求的全部参数
 
 @end
 @implementation SDataRequest
+- (void)submitData:(id)data {
+    @synchronized (self) {
+        if (self.state == SDataRequestStateExecuting) {
+            self.responseData = data;
+            self.state = SDataRequestStateFinished;
+        }
+    }
+}
 - (void)start {
-    [self willStartRequest];
-    self.state = SDataRequestStateCommunicating;
+    [self willStartDataRequest];
+    self.state = SDataRequestStateExecuting;
     [self loadData];
 }
 - (void)cancel {
-    
+    // 子类需要重写此方法加载数据
 }
 - (void)loadData {
     // 子类需要重写此方法加载数据
 }
+- (void)willStartDataRequest {
+    // 子类需要重写此方法加载数据
+}
+- (void)didEndDataRequest {
+    // 子类需要重写此方法加载数据
+}
+
 
 - (void)setState:(SDataRequestState)state {
-    _state = state;
-    if (_state == SDataRequestStateCancel ||
-        _state == SDataRequestStateSuccessful ||
-        _state == SDataRequestStateFailure) {
-        [self didEndRequest];
+    // 只能进行一次结束状态赋值 如果已经 结束、取消、超时 其中任何一种情况就不能再次赋值了
+    @synchronized (self) {
+        // 只能回调一次didEndDataRequest
+        if (state > 1 && _state <= 1) {
+            _state = state;
+            [self didEndDataRequest];
+            [self.delegate didEndDataRequest:self];
+        } else if (state <= 1) {
+            _state = state;
+        }
     }
+
 }
 @end

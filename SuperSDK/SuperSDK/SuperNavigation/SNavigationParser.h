@@ -13,7 +13,6 @@
 // 获取URLSchemes里面的pageName 和 Parameters
 - (void)getPageName:(NSString **)pageName pageParameters:(NSDictionary **)pageParameters;
 // 会自动添加前缀和后缀
-- (NSString *)addPrefixAndSuffix;
 @end
 @interface SNavigationParser : NSObject
 // 如果设置了前缀或者后缀，会自己给名字添加前缀和后缀
@@ -24,4 +23,6 @@
 
 + (instancetype)sharedNavigationParser;
 + (void)setPrefix:(NSString *)prefix suffix:(NSString *)suffix URLSchemes:(NSString *)URLSchemes;
++ (NSString *)addPrefixAndSuffixByPageName:(NSString *)pageName;
+
 @end

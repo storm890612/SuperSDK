@@ -34,7 +34,7 @@ static NSString *s_parameters_key = @"s_parameters";
     } else {
         [pageName getPageName:&vcName pageParameters:&vcParameters];
         if (vcName.length == 0) {
-            vcName = [pageName addPrefixAndSuffix];
+            vcName = [SNavigationParser addPrefixAndSuffixByPageName:pageName];
         }
         vc = (UIViewController *)NSClassFromString(vcName);
     }
@@ -58,7 +58,7 @@ static NSString *s_parameters_key = @"s_parameters";
 {
     [self backPageWithParameters:nil animated:animated];
 }
-- (void)backPageWithparameters:(NSDictionary *)parameters
+- (void)backPageWithParameters:(NSDictionary *)parameters
 {
     [self backPageWithParameters:parameters animated:YES];
 }
@@ -114,7 +114,7 @@ static NSString *s_parameters_key = @"s_parameters";
     NSDictionary *vcParameters;
     [pageName getPageName:&vcName pageParameters:&vcParameters];
     if (vcName.length == 0) {
-        vcName = [pageName addPrefixAndSuffix];
+        vcName = [SNavigationParser addPrefixAndSuffixByPageName:pageName];
     }
 
     for (NSInteger i = viewControllers.count - 1; i > 0; i--) {

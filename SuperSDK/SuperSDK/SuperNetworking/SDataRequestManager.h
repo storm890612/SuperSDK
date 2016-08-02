@@ -11,6 +11,6 @@
 
 @interface SDataRequestManager : NSObject
 + (instancetype)sharedManager;
-+ (SDataRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
-
++ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
++ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;
 @end

@@ -39,22 +39,11 @@
             [parameters setObject:value forKey:key];
         }
     }
-    [name addPrefixAndSuffix];
+    [SNavigationParser addPrefixAndSuffixByPageName:name];
     *pageName = name;
     *pageParameters = parameters;
 }
-- (NSString *)addPrefixAndSuffix {
-    NSString *name = self;
-    if ([SNavigationParser sharedNavigationParser].prefix.length > 0 &&
-        ![name hasPrefix:[SNavigationParser sharedNavigationParser].prefix]) {
-        name = [[SNavigationParser sharedNavigationParser].prefix stringByAppendingString:name];
-    }
-    if ([SNavigationParser sharedNavigationParser].suffix.length > 0 &&
-        ![name hasSuffix:[SNavigationParser sharedNavigationParser].suffix]) {
-        name = [name stringByAppendingString:[SNavigationParser sharedNavigationParser].suffix];
-    }
-    return name;
-}
+
 @end
 @implementation SNavigationParser
 + (instancetype)sharedNavigationParser {
@@ -65,5 +54,22 @@
     });
     return obj;
 }
-
++ (void)setPrefix:(NSString *)prefix suffix:(NSString *)suffix URLSchemes:(NSString *)URLSchemes {
+    SNavigationParser *parser = [self sharedNavigationParser];
+    parser.prefix = prefix;
+    parser.suffix = suffix;
+    parser.URLSchemes = URLSchemes;
+}
++ (NSString *)addPrefixAndSuffixByPageName:(NSString *)pageName {
+    NSString *name = pageName;
+    if ([SNavigationParser sharedNavigationParser].prefix.length > 0 &&
+        ![name hasPrefix:[SNavigationParser sharedNavigationParser].prefix]) {
+        name = [[SNavigationParser sharedNavigationParser].prefix stringByAppendingString:name];
+    }
+    if ([SNavigationParser sharedNavigationParser].suffix.length > 0 &&
+        ![name hasSuffix:[SNavigationParser sharedNavigationParser].suffix]) {
+        name = [name stringByAppendingString:[SNavigationParser sharedNavigationParser].suffix];
+    }
+    return name;
+}
 @end
