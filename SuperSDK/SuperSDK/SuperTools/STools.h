@@ -7,11 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <objc/message.h>
-
-// 运行时objc_msgSend
-#define SMsgSend(...) ((void (*)(void *, SEL, id ))objc_msgSend)(__VA_ARGS__)
-#define SMsgTarget(target) (__bridge void *)(target)
 @interface STools : NSObject
 + (void)addUserAgentWithName:(NSString *)name;
 

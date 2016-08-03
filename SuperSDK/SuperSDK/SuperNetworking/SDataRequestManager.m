@@ -5,15 +5,22 @@
 //  Created by 刘超 on 16/7/10.
 //  Copyright © 2016年 SuperMan. All rights reserved.
 //
+#import <objc/message.h>
+
+// 运行时objc_msgSend
+#define SMsgSend(...) ((void (*)(void *, SEL, id ))objc_msgSend)(__VA_ARGS__)
+#define SMsgTarget(target) (__bridge void *)(target)
 
 #import "SDataRequestManager.h"
-#import "STools.h"
 #import "SDataRequestParser.h"
 #import "SDataRequestCallBackItem.h"
+#import "SDataRequest.h"
 @interface SDataRequestManager () <SDataRequestDelegate>
+@property (nonatomic, strong) NSMutableDictionary *dataRequestMap;
+@property (nonatomic, strong) NSMutableDictionary *dataRequestCallBackItemMap;
+@property (nonatomic, strong) NSMutableDictionary *dataRequestCallBackBlockMap;
 @property (nonatomic, assign) NSInteger dataRequestCount;
-@property (nonatomic, strong) NSOperationQueue *operationQueue;
-@property (nonatomic, strong) NSMutableDictionary *dataRequestCallBackMap;
+
 @end
 @implementation SDataRequestManager
 + (instancetype)sharedManager {
@@ -33,30 +40,81 @@
     [dataRequest start];
     return dataRequest;
 }
+
 + (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
     return [[self sharedManager] registerDataRequestByName:name parameters:parameters target:target action:action];
 }
 - (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
+    SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters];
+    SDataRequestCallBackItem *callBackItem = [SDataRequestCallBackItem dataRequestCallBackItemWithTarget:target action:action];
+    [self.dataRequestCallBackItemMap setObject:callBackItem forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
+    return dataRequest;
+}
+
++ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+    return [[self sharedManager] sendDataRequestByName:name parameters:parameters callBack:callBack];
+}
+- (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+    SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters callBack:callBack];
+    [dataRequest start];
+    return dataRequest;
+}
+
++ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+    return [[self sharedManager] registerDataRequestByName:name parameters:parameters callBack:callBack];
+}
+- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+    SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters];
+    SDataRequestCallBackBlock callBackBlock = [callBack copy];
+    [self.dataRequestCallBackItemMap setObject:callBackBlock forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
+    return dataRequest;
+}
+
+- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters {
     NSString *dataRequsetName = [SDataRequestParser addPrefixAndSuffixByDataRequestName:name];
     SDataRequest *dataRequest = (SDataRequest *)NSClassFromString(dataRequsetName);
     dataRequest.businessParameters = parameters;
     dataRequest.delegate = self;
-    dataRequest.dataRequestID = self.dataRequestCount++;
-    SDataRequestCallBackItem *callBackItem = [SDataRequestCallBackItem dataRequestCallBackItemWithTarget:target action:action];
-    [self.dataRequestCallBackMap setObject:callBackItem forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
+    dataRequest.dataRequestID = self.dataRequestCount++; // 写法不严谨，但是能满足99%的APP吧……
     return dataRequest;
+}
++ (void)removeDataRequest:(SDataRequest *)dataRequest {
+    NSString *dataRequestID = [NSString stringWithFormat:@"%ld",dataRequest.dataRequestID];
+    [[SDataRequestManager sharedManager].dataRequestMap removeObjectForKey:dataRequestID];
+}
+- (NSArray *)allDataRequests {
+    return self.dataRequestMap.allValues;
 }
 - (void)didEndDataRequest:(SDataRequest *)dataRequest {
     NSString *dataRequestID = [NSString stringWithFormat:@"%ld",dataRequest.dataRequestID];
-    SDataRequestCallBackItem *callBackItem = self.dataRequestCallBackMap[dataRequestID];
-    SMsgSend(SMsgTarget(callBackItem.callBackTarget),
-             callBackItem.callBackAction,
-             dataRequest);
-}
-- (NSMutableDictionary *)dataRequestCallBackMap {
-    if (!_dataRequestCallBackMap) {
-        _dataRequestCallBackMap = [NSMutableDictionary new];
+    SDataRequestCallBackBlock callBackBlock = self.dataRequestCallBackBlockMap[dataRequestID];
+    if (callBackBlock) {
+        callBackBlock(dataRequest);
+        return;
     }
-    return _dataRequestCallBackMap;
+    SDataRequestCallBackItem *callBackItem = self.dataRequestCallBackItemMap[dataRequestID];
+    if ([callBackItem.callBackTarget respondsToSelector:callBackItem.callBackAction]) {
+        SMsgSend(SMsgTarget(callBackItem.callBackTarget),
+                 callBackItem.callBackAction,
+                 dataRequest);
+    }
+}
+- (NSMutableDictionary *)dataRequestMap {
+    if (!_dataRequestMap) {
+        _dataRequestMap = [NSMutableDictionary new];
+    }
+    return _dataRequestMap;
+}
+- (NSMutableDictionary *)dataRequestCallBackItemMap {
+    if (!_dataRequestCallBackItemMap) {
+        _dataRequestCallBackItemMap = [NSMutableDictionary new];
+    }
+    return _dataRequestCallBackItemMap;
+}
+- (NSMutableDictionary *)dataRequestCallBackBlockMap {
+    if (!_dataRequestCallBackBlockMap) {
+        _dataRequestCallBackBlockMap = [NSMutableDictionary new];
+    }
+    return _dataRequestCallBackBlockMap;
 }
 @end
