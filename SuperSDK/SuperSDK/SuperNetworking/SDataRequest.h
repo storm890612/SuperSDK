@@ -51,4 +51,7 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
 // 已经结束数据请求，这个方法只会走一遍 取消 结束 超时 都会走这个方法
 - (void)didEndDataRequest;
 
+- (void)addDependency:(SDataRequest *)dataRequest;
+- (void)removeDependency:(SDataRequest *)dataRequest;
+
 @end
