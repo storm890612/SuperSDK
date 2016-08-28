@@ -28,6 +28,7 @@
 		A84983801D51073600DB048C /* SDataRequestCallBackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A849837F1D51073600DB048C /* SDataRequestCallBackItem.m */; };
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
+		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
 		A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265881D22E1500022D6AC /* AppDelegate.m */; };
 		A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2658B1D22E1500022D6AC /* ViewController.m */; };
@@ -85,7 +86,7 @@
 		A84983671D32BFB200DB048C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A84983681D32BFB200DB048C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SDataRequestManager.h"; sourceTree = "<group>"; };
-		A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SDataRequestManager.m"; path = "SuperSDK/SuperNetworking/NSObject+SDataRequestManager.m"; sourceTree = "<group>"; };
+		A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SDataRequestManager.m"; sourceTree = "<group>"; };
 		A84983751D4A617000DB048C /* SDataRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestOperation.h; sourceTree = "<group>"; };
 		A84983761D4A617000DB048C /* SDataRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataRequestOperation.m; sourceTree = "<group>"; };
 		A84983781D4A641400DB048C /* SDataRequestDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestDemo.h; sourceTree = "<group>"; };
@@ -98,6 +99,8 @@
 		A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SNavigationController.m"; sourceTree = "<group>"; };
 		A84B81FF1D22F0F200DD3513 /* SWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWebViewController.h; sourceTree = "<group>"; };
 		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
+		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
+		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
 		A8F265811D22E1500022D6AC /* SuperSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F265851D22E1500022D6AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F265871D22E1500022D6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,7 +212,6 @@
 				A84983791D4A641400DB048C /* SDataRequestDemo.m */,
 				A8F2658A1D22E1500022D6AC /* ViewController.h */,
 				A8F2658B1D22E1500022D6AC /* ViewController.m */,
-				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
 				A8F265901D22E1500022D6AC /* Assets.xcassets */,
 				A8F265951D22E1500022D6AC /* Info.plist */,
 				A8F265841D22E1500022D6AC /* Supporting Files */,
@@ -263,6 +265,9 @@
 				A84983521D32BE8000DB048C /* SDataRequest.h */,
 				A84983531D32BE8000DB048C /* SDataRequest.m */,
 				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
+				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
+				A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */,
+				A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */,
 				A849837B1D50F97B00DB048C /* SDataRequestParser.h */,
 				A849837C1D50F97B00DB048C /* SDataRequestParser.m */,
 				A849837E1D51073600DB048C /* SDataRequestCallBackItem.h */,
@@ -456,6 +461,7 @@
 				A84983481D251E8100DB048C /* SQRView.m in Sources */,
 				A8F265BE1D22E8420022D6AC /* STools.m in Sources */,
 				A849837A1D4A641400DB048C /* SDataRequestDemo.m in Sources */,
+				A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -76,6 +76,7 @@
     dataRequest.businessParameters = parameters;
     dataRequest.delegate = self;
     dataRequest.dataRequestID = self.dataRequestCount++; // 写法不严谨，但是能满足99%的APP吧……
+    [self.dataRequestMap setObject:dataRequest forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
     return dataRequest;
 }
 + (void)removeDataRequest:(SDataRequest *)dataRequest {

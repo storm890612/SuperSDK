@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SDataRequest.h"
 @interface NSObject (SDataRequestManager)
-- (SDataRequest *)sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters action:(SEL)action;
-- (void)cancelAllRequest;
+@property (nonatomic, strong) NSMutableArray *s_dataRequests;
+- (SDataRequest *)s_sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters action:(SEL)action;
+- (void)s_cancelAllRequest;
 @end

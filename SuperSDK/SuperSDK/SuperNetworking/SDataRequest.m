@@ -19,6 +19,9 @@
         if (self.state == SDataRequestStateExecuting) {
             self.responseData = data;
             self.state = SDataRequestStateFinished;
+            for (SDataRequest *dataRequest in self.dependencyDataRequests) {
+                [dataRequest start];
+            }
         }
     }
 }
@@ -28,7 +31,8 @@
     [self loadData];
 }
 - (void)cancel {
-    // 子类需要重写此方法加载数据
+    // 子类需要重写此方法
+    self.state = SDataRequestStateCancel;
 }
 - (void)loadData {
     // 子类需要重写此方法加载数据
