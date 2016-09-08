@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        self.hidesBottomBarWhenPushed=YES;
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }

@@ -15,9 +15,6 @@
     NSString *name = nil;
     NSMutableDictionary *parameters = nil;
     
-    if (![self hasPrefix:[SNavigationParser sharedNavigationParser].URLSchemes]) {
-        return;
-    }
     NSRange range1 = [self rangeOfString:@"://"];
     if (range1.length == 0) {
         return;
@@ -39,7 +36,9 @@
             [parameters setObject:value forKey:key];
         }
     }
-    [SNavigationParser addPrefixAndSuffixByPageName:name];
+    if ([SNavigationParser sharedNavigationParser].needPrefixAndSuffix) {
+        name = [SNavigationParser addPrefixAndSuffixByPageName:name];
+    }
     *pageName = name;
     *pageParameters = parameters;
 }
@@ -71,5 +70,11 @@
         name = [name stringByAppendingString:[SNavigationParser sharedNavigationParser].suffix];
     }
     return name;
+}
++ (NSString *)replacePageName:(NSString *)pageName {
+    // 取一个字典，然后查找替换，具体去哪取，看业务需求
+    NSDictionary *pageNameDictionary = @{@"homePage":@"SHomeViewController"};
+    NSString *newPageName = pageNameDictionary[pageName];
+    return newPageName.length > 0 ? newPageName : pageName;
 }
 @end

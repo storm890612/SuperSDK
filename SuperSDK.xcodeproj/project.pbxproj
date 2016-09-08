@@ -252,12 +252,12 @@
 				A8F265BB1D22E73C0022D6AC /* SuperWebViewController */,
 				A8F265BA1D22E3AB0022D6AC /* SuperTools */,
 				A8F265B91D22E2410022D6AC /* SuperNavigation */,
-				A8F265B81D22E1B20022D6AC /* SuperNetworking */,
+				A8F265B81D22E1B20022D6AC /* SuperDataRequest */,
 			);
 			path = SuperSDK;
 			sourceTree = "<group>";
 		};
-		A8F265B81D22E1B20022D6AC /* SuperNetworking */ = {
+		A8F265B81D22E1B20022D6AC /* SuperDataRequest */ = {
 			isa = PBXGroup;
 			children = (
 				A849834C1D316F1800DB048C /* SDataRequestManager.h */,
@@ -273,6 +273,7 @@
 				A849837E1D51073600DB048C /* SDataRequestCallBackItem.h */,
 				A849837F1D51073600DB048C /* SDataRequestCallBackItem.m */,
 			);
+			name = SuperDataRequest;
 			path = SuperNetworking;
 			sourceTree = "<group>";
 		};
