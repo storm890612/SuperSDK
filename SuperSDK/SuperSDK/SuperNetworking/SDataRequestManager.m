@@ -32,45 +32,54 @@
     return _sharedManager;
 }
 
-+ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
++ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action
+{
     return [[self sharedManager] sendDataRequestByName:name parameters:parameters target:target action:action];
 }
-- (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
+- (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action
+{
     SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters target:target action:action];
     [dataRequest start];
     return dataRequest;
 }
 
-+ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
++ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action
+{
     return [[self sharedManager] registerDataRequestByName:name parameters:parameters target:target action:action];
 }
-- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action {
+- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action
+{
     SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters];
     SDataRequestCallBackItem *callBackItem = [SDataRequestCallBackItem dataRequestCallBackItemWithTarget:target action:action];
     [self.dataRequestCallBackItemMap setObject:callBackItem forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
     return dataRequest;
 }
 
-+ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
++ (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
     return [[self sharedManager] sendDataRequestByName:name parameters:parameters callBack:callBack];
 }
-- (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+- (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
     SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters callBack:callBack];
     [dataRequest start];
     return dataRequest;
 }
 
-+ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
++ (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
     return [[self sharedManager] registerDataRequestByName:name parameters:parameters callBack:callBack];
 }
-- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
+- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
     SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters];
     SDataRequestCallBackBlock callBackBlock = [callBack copy];
     [self.dataRequestCallBackBlockMap setObject:callBackBlock forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
     return dataRequest;
 }
 
-- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters {
+- (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters
+{
     SDataRequest *dataRequest = (SDataRequest *)NSClassFromString(name);
     dataRequest.businessParameters = parameters;
     dataRequest.delegate = self;
@@ -78,16 +87,16 @@
     [self.dataRequestMap setObject:dataRequest forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
     return dataRequest;
 }
-+ (void)removeDataRequest:(SDataRequest *)dataRequest {
++ (void)removeDataRequest:(SDataRequest *)dataRequest
+{
     NSString *dataRequestID = [NSString stringWithFormat:@"%ld",dataRequest.dataRequestID];
     [[SDataRequestManager sharedManager].dataRequestMap removeObjectForKey:dataRequestID];
     [[SDataRequestManager sharedManager].dataRequestCallBackItemMap removeObjectForKey:dataRequestID];
     [[SDataRequestManager sharedManager].dataRequestCallBackBlockMap removeObjectForKey:dataRequestID];
 }
-- (NSArray *)allDataRequests {
-    return self.dataRequestMap.allValues;
-}
-- (void)didEndDataRequest:(SDataRequest *)dataRequest {
+
+- (void)didEndDataRequest:(SDataRequest *)dataRequest
+{
     NSString *dataRequestID = [NSString stringWithFormat:@"%ld",dataRequest.dataRequestID];
     SDataRequestCallBackBlock callBackBlock = self.dataRequestCallBackBlockMap[dataRequestID];
     if (callBackBlock) {
@@ -105,19 +114,27 @@
         [self.dataRequestMap removeObjectForKey:dataRequestID];
     }
 }
-- (NSMutableDictionary *)dataRequestMap {
+
+- (NSArray *)allDataRequests
+{
+    return self.dataRequestMap.allValues;
+}
+- (NSMutableDictionary *)dataRequestMap
+{
     if (!_dataRequestMap) {
         _dataRequestMap = [NSMutableDictionary new];
     }
     return _dataRequestMap;
 }
-- (NSMutableDictionary *)dataRequestCallBackItemMap {
+- (NSMutableDictionary *)dataRequestCallBackItemMap
+{
     if (!_dataRequestCallBackItemMap) {
         _dataRequestCallBackItemMap = [NSMutableDictionary new];
     }
     return _dataRequestCallBackItemMap;
 }
-- (NSMutableDictionary *)dataRequestCallBackBlockMap {
+- (NSMutableDictionary *)dataRequestCallBackBlockMap
+{
     if (!_dataRequestCallBackBlockMap) {
         _dataRequestCallBackBlockMap = [NSMutableDictionary new];
     }

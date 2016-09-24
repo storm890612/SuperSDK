@@ -8,10 +8,13 @@
 
 #import "SNavigationParser.h"
 @implementation NSString (SNavigationParser)
-- (BOOL)isURL {
+
+- (BOOL)isURL
+{
     return [self hasPrefix:@"http"];
 }
-- (void)getPageName:(NSString **)pageName pageParameters:(NSDictionary **)pageParameters {
+- (void)getPageName:(NSString **)pageName pageParameters:(NSDictionary **)pageParameters
+{
     NSString *name = nil;
     NSMutableDictionary *parameters = nil;
     
@@ -39,10 +42,12 @@
     *pageName = name;
     *pageParameters = parameters;
 }
-
 @end
+
 @implementation SNavigationParser
-+ (instancetype)sharedNavigationParser {
+
++ (instancetype)sharedNavigationParser
+{
     static SNavigationParser *obj;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -50,10 +55,13 @@
     });
     return obj;
 }
-+ (NSString *)replacePageName:(NSString *)pageName {
+
++ (NSString *)replacePageName:(NSString *)pageName
+{
     // 取一个字典，然后查找替换，具体去哪取，看业务需求
     NSDictionary *pageNameDictionary = @{@"homePage":@"SHomeViewController"};
     NSString *newPageName = pageNameDictionary[pageName];
     return newPageName.length > 0 ? newPageName : pageName;
 }
+
 @end
