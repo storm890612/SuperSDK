@@ -33,14 +33,8 @@ static NSString *s_parameters_key = @"s_parameters";
         vc = webVC;
     } else if ([pageName hasPrefix:[SNavigationParser sharedNavigationParser].URLSchemes]) {
         [pageName getPageName:&vcName pageParameters:&vcParameters];
-        if ([SNavigationParser sharedNavigationParser].needPrefixAndSuffix) {
-            [SNavigationParser addPrefixAndSuffixByPageName:vcName];
-        }
         vc = (UIViewController *)NSClassFromString(vcName);
     } else {
-        if ([SNavigationParser sharedNavigationParser].needPrefixAndSuffix) {
-            pageName = [SNavigationParser addPrefixAndSuffixByPageName:pageName];
-        }
         vc = (UIViewController *)NSClassFromString(pageName);
     }
 
@@ -119,9 +113,8 @@ static NSString *s_parameters_key = @"s_parameters";
     NSDictionary *vcParameters;
     [pageName getPageName:&vcName pageParameters:&vcParameters];
     if (vcName.length == 0) {
-        vcName = [SNavigationParser addPrefixAndSuffixByPageName:pageName];
+        vcName = pageName;
     }
-
     for (NSInteger i = viewControllers.count - 1; i > 0; i--) {
         vc = [viewControllers objectAtIndex:i];
         if ([vcName isEqualToString:NSStringFromClass([vc class])]) {
@@ -130,7 +123,6 @@ static NSString *s_parameters_key = @"s_parameters";
     }
     [vc setValue:parameters forKey:s_parameters_key];
     [self popToViewController:vc animated:animated];
-
 }
 #pragma mark-----backPageToIndex
 

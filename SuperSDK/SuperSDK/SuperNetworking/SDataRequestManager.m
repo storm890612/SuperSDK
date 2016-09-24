@@ -66,13 +66,12 @@
 - (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack {
     SDataRequest *dataRequest = [self registerDataRequestByName:name parameters:parameters];
     SDataRequestCallBackBlock callBackBlock = [callBack copy];
-    [self.dataRequestCallBackItemMap setObject:callBackBlock forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
+    [self.dataRequestCallBackBlockMap setObject:callBackBlock forKey:[NSString stringWithFormat:@"%ld",dataRequest.dataRequestID]];
     return dataRequest;
 }
 
 - (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters {
-    NSString *dataRequsetName = [SDataRequestParser addPrefixAndSuffixByDataRequestName:name];
-    SDataRequest *dataRequest = (SDataRequest *)NSClassFromString(dataRequsetName);
+    SDataRequest *dataRequest = (SDataRequest *)NSClassFromString(name);
     dataRequest.businessParameters = parameters;
     dataRequest.delegate = self;
     dataRequest.dataRequestID = self.dataRequestCount++; // 写法不严谨，但是能满足99%的APP吧……
@@ -82,6 +81,8 @@
 + (void)removeDataRequest:(SDataRequest *)dataRequest {
     NSString *dataRequestID = [NSString stringWithFormat:@"%ld",dataRequest.dataRequestID];
     [[SDataRequestManager sharedManager].dataRequestMap removeObjectForKey:dataRequestID];
+    [[SDataRequestManager sharedManager].dataRequestCallBackItemMap removeObjectForKey:dataRequestID];
+    [[SDataRequestManager sharedManager].dataRequestCallBackBlockMap removeObjectForKey:dataRequestID];
 }
 - (NSArray *)allDataRequests {
     return self.dataRequestMap.allValues;
@@ -91,6 +92,8 @@
     SDataRequestCallBackBlock callBackBlock = self.dataRequestCallBackBlockMap[dataRequestID];
     if (callBackBlock) {
         callBackBlock(dataRequest);
+        [self.dataRequestCallBackBlockMap removeObjectForKey:dataRequestID];
+        [self.dataRequestMap removeObjectForKey:dataRequestID];
         return;
     }
     SDataRequestCallBackItem *callBackItem = self.dataRequestCallBackItemMap[dataRequestID];
@@ -98,6 +101,8 @@
         SMsgSend(SMsgTarget(callBackItem.callBackTarget),
                  callBackItem.callBackAction,
                  dataRequest);
+        [self.dataRequestCallBackItemMap removeObjectForKey:dataRequestID];
+        [self.dataRequestMap removeObjectForKey:dataRequestID];
     }
 }
 - (NSMutableDictionary *)dataRequestMap {

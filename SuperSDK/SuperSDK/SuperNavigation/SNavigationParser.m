@@ -36,9 +36,6 @@
             [parameters setObject:value forKey:key];
         }
     }
-    if ([SNavigationParser sharedNavigationParser].needPrefixAndSuffix) {
-        name = [SNavigationParser addPrefixAndSuffixByPageName:name];
-    }
     *pageName = name;
     *pageParameters = parameters;
 }
@@ -52,24 +49,6 @@
         obj = [SNavigationParser new];
     });
     return obj;
-}
-+ (void)setPrefix:(NSString *)prefix suffix:(NSString *)suffix URLSchemes:(NSString *)URLSchemes {
-    SNavigationParser *parser = [self sharedNavigationParser];
-    parser.prefix = prefix;
-    parser.suffix = suffix;
-    parser.URLSchemes = URLSchemes;
-}
-+ (NSString *)addPrefixAndSuffixByPageName:(NSString *)pageName {
-    NSString *name = pageName;
-    if ([SNavigationParser sharedNavigationParser].prefix.length > 0 &&
-        ![name hasPrefix:[SNavigationParser sharedNavigationParser].prefix]) {
-        name = [[SNavigationParser sharedNavigationParser].prefix stringByAppendingString:name];
-    }
-    if ([SNavigationParser sharedNavigationParser].suffix.length > 0 &&
-        ![name hasSuffix:[SNavigationParser sharedNavigationParser].suffix]) {
-        name = [name stringByAppendingString:[SNavigationParser sharedNavigationParser].suffix];
-    }
-    return name;
 }
 + (NSString *)replacePageName:(NSString *)pageName {
     // 取一个字典，然后查找替换，具体去哪取，看业务需求
