@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A84983481D251E8100DB048C /* SQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983471D251E8100DB048C /* SQRView.m */; };
-		A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */; };
+		A849834B1D2ACB9E00DB048C /* UIViewController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834A1D2ACB9E00DB048C /* UIViewController+SNavigationController.m */; };
 		A849834E1D316F1800DB048C /* SDataRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A849834D1D316F1800DB048C /* SDataRequestManager.m */; };
 		A84983511D32BCB000DB048C /* SNavigationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983501D32BCB000DB048C /* SNavigationParser.m */; };
 		A84983541D32BE8000DB048C /* SDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983531D32BE8000DB048C /* SDataRequest.m */; };
@@ -29,6 +29,8 @@
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
+		A8F1025D1D9664B300DA8E93 /* SUIViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */; };
+		A8F102601D9664C300DA8E93 /* SUIViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
 		A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265881D22E1500022D6AC /* AppDelegate.m */; };
 		A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2658B1D22E1500022D6AC /* ViewController.m */; };
@@ -58,8 +60,8 @@
 /* Begin PBXFileReference section */
 		A84983461D251E8100DB048C /* SQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRView.h; sourceTree = "<group>"; };
 		A84983471D251E8100DB048C /* SQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRView.m; sourceTree = "<group>"; };
-		A84983491D2ACB9E00DB048C /* UIViewController+SViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SViewController.h"; sourceTree = "<group>"; };
-		A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SViewController.m"; sourceTree = "<group>"; };
+		A84983491D2ACB9E00DB048C /* UIViewController+SNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SNavigationController.h"; sourceTree = "<group>"; };
+		A849834A1D2ACB9E00DB048C /* UIViewController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SNavigationController.m"; sourceTree = "<group>"; };
 		A849834C1D316F1800DB048C /* SDataRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestManager.h; sourceTree = "<group>"; };
 		A849834D1D316F1800DB048C /* SDataRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataRequestManager.m; sourceTree = "<group>"; };
 		A849834F1D32BCB000DB048C /* SNavigationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNavigationParser.h; sourceTree = "<group>"; };
@@ -101,6 +103,10 @@
 		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
+		A8F1025B1D9664B300DA8E93 /* SUIViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIViewControllerOne.h; sourceTree = "<group>"; };
+		A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIViewControllerOne.m; sourceTree = "<group>"; };
+		A8F1025E1D9664C300DA8E93 /* SUIViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIViewControllerTwo.h; sourceTree = "<group>"; };
+		A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIViewControllerTwo.m; sourceTree = "<group>"; };
 		A8F265811D22E1500022D6AC /* SuperSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F265851D22E1500022D6AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F265871D22E1500022D6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +218,10 @@
 				A84983791D4A641400DB048C /* SDataRequestDemo.m */,
 				A8F2658A1D22E1500022D6AC /* ViewController.h */,
 				A8F2658B1D22E1500022D6AC /* ViewController.m */,
+				A8F1025B1D9664B300DA8E93 /* SUIViewControllerOne.h */,
+				A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */,
+				A8F1025E1D9664C300DA8E93 /* SUIViewControllerTwo.h */,
+				A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */,
 				A8F265901D22E1500022D6AC /* Assets.xcassets */,
 				A8F265951D22E1500022D6AC /* Info.plist */,
 				A8F265841D22E1500022D6AC /* Supporting Files */,
@@ -284,8 +294,8 @@
 				A84983501D32BCB000DB048C /* SNavigationParser.m */,
 				A84B81FC1D22F0E500DD3513 /* UINavigationController+SNavigationController.h */,
 				A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */,
-				A84983491D2ACB9E00DB048C /* UIViewController+SViewController.h */,
-				A849834A1D2ACB9E00DB048C /* UIViewController+SViewController.m */,
+				A84983491D2ACB9E00DB048C /* UIViewController+SNavigationController.h */,
+				A849834A1D2ACB9E00DB048C /* UIViewController+SNavigationController.m */,
 			);
 			path = SuperNavigation;
 			sourceTree = "<group>";
@@ -444,9 +454,10 @@
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,
 				A849836B1D32BFB200DB048C /* AFHTTPSessionManager.m in Sources */,
+				A8F102601D9664C300DA8E93 /* SUIViewControllerTwo.m in Sources */,
 				A849834E1D316F1800DB048C /* SDataRequestManager.m in Sources */,
 				A849836C1D32BFB200DB048C /* AFNetworkReachabilityManager.m in Sources */,
-				A849834B1D2ACB9E00DB048C /* UIViewController+SViewController.m in Sources */,
+				A849834B1D2ACB9E00DB048C /* UIViewController+SNavigationController.m in Sources */,
 				A84983741D3BEAA600DB048C /* NSObject+SDataRequestManager.m in Sources */,
 				A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */,
 				A849836F1D32BFB200DB048C /* AFURLRequestSerialization.m in Sources */,
@@ -458,6 +469,7 @@
 				A84983511D32BCB000DB048C /* SNavigationParser.m in Sources */,
 				A849837D1D50F97B00DB048C /* SDataRequestParser.m in Sources */,
 				A849836D1D32BFB200DB048C /* AFSecurityPolicy.m in Sources */,
+				A8F1025D1D9664B300DA8E93 /* SUIViewControllerOne.m in Sources */,
 				A8F265861D22E1500022D6AC /* main.m in Sources */,
 				A84983481D251E8100DB048C /* SQRView.m in Sources */,
 				A8F265BE1D22E8420022D6AC /* STools.m in Sources */,

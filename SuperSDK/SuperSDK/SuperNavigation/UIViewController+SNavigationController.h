@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (SViewController)
+@interface UIViewController (SNavigationController)
 @property (nonatomic, strong) NSDictionary *s_parameters;
 @end

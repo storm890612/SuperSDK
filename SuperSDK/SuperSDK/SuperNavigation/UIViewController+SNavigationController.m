@@ -1,15 +1,15 @@
 //
-//  UIViewController+SViewController.m
+//  UIViewController+SNavigationController.m
 //  SuperSDK
 //
 //  Created by 刘超 on 16/7/5.
 //  Copyright © 2016年 SuperMan. All rights reserved.
 //
 
-#import "UIViewController+SViewController.h"
+#import "UIViewController+SNavigationController.h"
 #import <objc/runtime.h>
 static NSString *s_parameters_key;
-@implementation UIViewController (SViewController)
+@implementation UIViewController (SNavigationController)
 @dynamic s_parameters;
 // 每次取值都会清空这个对象，请自己保存在自己的业务类里面
 - (NSDictionary *)s_parameters
