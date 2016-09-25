@@ -13,6 +13,7 @@ typedef void(^SDataRequestCallBackBlock)(SDataRequest *dataRequest);
 
 @interface SDataRequestManager : NSObject
 @property (nonatomic, readonly,   copy) NSArray *allDataRequests;
+
 + (instancetype)sharedManager;
 
 + (SDataRequest *)sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action;

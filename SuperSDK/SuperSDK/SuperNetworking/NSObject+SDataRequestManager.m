@@ -40,12 +40,31 @@ static NSString *s_dataRequests_key;
     [self.s_dataRequests addObject:[SWeakDataRequest weakDataRequest:dataRequest]];
     return dataRequest;
 }
+
 - (void)s_removeDataRequest:(SDataRequest *)dataRequest
 {
     [SDataRequestManager removeDataRequest:dataRequest];
 }
 
-- (void)s_cancelAllRequest {
+- (void)s_cancelDataRequest:(SDataRequest *)dataRequest
+{
+    @synchronized (self) {
+        [dataRequest cancel];
+        NSInteger index = [self.s_dataRequests indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            SWeakDataRequest *weakdataRequest = obj;
+            BOOL  found = (weakdataRequest.dataRequest == dataRequest);
+            *stop = found;
+            return found;
+        }];
+        if (index != NSNotFound) {
+            [self.s_dataRequests removeObjectAtIndex:index];
+        }
+
+    }
+}
+
+- (void)s_cancelAllRequest
+{
     for (SWeakDataRequest *weakdataRequest in self.s_dataRequests) {
         SDataRequest *dataRequest = weakdataRequest.dataRequest;
         if (dataRequest) {

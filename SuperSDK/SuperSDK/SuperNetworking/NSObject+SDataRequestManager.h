@@ -20,5 +20,7 @@
 
 - (void)s_removeDataRequest:(SDataRequest *)dataRequest;
 
+- (void)s_cancelDataRequest:(SDataRequest *)dataRequest;
+
 - (void)s_cancelAllRequest;
 @end

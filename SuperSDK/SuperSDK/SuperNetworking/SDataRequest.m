@@ -38,10 +38,10 @@
     // 子类需要重写此方法加载数据
 }
 - (void)willStartDataRequest {
-    // 子类需要重写此方法加载数据
+    // 子类需要重写此方法
 }
 - (void)didEndDataRequest {
-    // 子类需要重写此方法加载数据
+    // 子类需要重写此方法
 }
 
 - (void)addDependency:(SDataRequest *)dataRequest {

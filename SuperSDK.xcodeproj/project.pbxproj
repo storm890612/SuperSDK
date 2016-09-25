@@ -272,14 +272,14 @@
 				A849834D1D316F1800DB048C /* SDataRequestManager.m */,
 				A84983521D32BE8000DB048C /* SDataRequest.h */,
 				A84983531D32BE8000DB048C /* SDataRequest.m */,
-				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
-				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
 				A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */,
 				A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */,
 				A849837B1D50F97B00DB048C /* SDataRequestParser.h */,
 				A849837C1D50F97B00DB048C /* SDataRequestParser.m */,
 				A849837E1D51073600DB048C /* SDataRequestCallBackItem.h */,
 				A849837F1D51073600DB048C /* SDataRequestCallBackItem.m */,
+				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
+				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
 			);
 			name = SuperDataRequest;
 			path = SuperNetworking;
