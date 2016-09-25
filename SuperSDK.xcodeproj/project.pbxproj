@@ -29,33 +29,13 @@
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
-		A8F1025D1D9664B300DA8E93 /* SUIViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */; };
-		A8F102601D9664C300DA8E93 /* SUIViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */; };
+		A8F1026A1D982AC700DA8E93 /* SOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102691D982AC700DA8E93 /* SOneViewController.m */; };
+		A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1026C1D982AD500DA8E93 /* STwoViewController.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
 		A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265881D22E1500022D6AC /* AppDelegate.m */; };
-		A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2658B1D22E1500022D6AC /* ViewController.m */; };
 		A8F265911D22E1500022D6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F265901D22E1500022D6AC /* Assets.xcassets */; };
-		A8F2659F1D22E1500022D6AC /* SuperSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F2659E1D22E1500022D6AC /* SuperSDKTests.m */; };
-		A8F265AA1D22E1510022D6AC /* SuperSDKUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265A91D22E1510022D6AC /* SuperSDKUITests.m */; };
 		A8F265BE1D22E8420022D6AC /* STools.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265BD1D22E8420022D6AC /* STools.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A8F2659B1D22E1500022D6AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8F265791D22E1500022D6AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A8F265801D22E1500022D6AC;
-			remoteInfo = SuperSDK;
-		};
-		A8F265A61D22E1500022D6AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8F265791D22E1500022D6AC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A8F265801D22E1500022D6AC;
-			remoteInfo = SuperSDK;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A84983461D251E8100DB048C /* SQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRView.h; sourceTree = "<group>"; };
@@ -103,44 +83,24 @@
 		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
-		A8F1025B1D9664B300DA8E93 /* SUIViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIViewControllerOne.h; sourceTree = "<group>"; };
-		A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIViewControllerOne.m; sourceTree = "<group>"; };
-		A8F1025E1D9664C300DA8E93 /* SUIViewControllerTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUIViewControllerTwo.h; sourceTree = "<group>"; };
-		A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUIViewControllerTwo.m; sourceTree = "<group>"; };
+		A8F102621D9665AB00DA8E93 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A8F102631D9665F700DA8E93 /* SuperSDKHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperSDKHeader.h; sourceTree = "<group>"; };
+		A8F102681D982AC700DA8E93 /* SOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOneViewController.h; sourceTree = "<group>"; };
+		A8F102691D982AC700DA8E93 /* SOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOneViewController.m; sourceTree = "<group>"; };
+		A8F1026B1D982AD500DA8E93 /* STwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STwoViewController.h; sourceTree = "<group>"; };
+		A8F1026C1D982AD500DA8E93 /* STwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STwoViewController.m; sourceTree = "<group>"; };
 		A8F265811D22E1500022D6AC /* SuperSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F265851D22E1500022D6AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F265871D22E1500022D6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A8F265881D22E1500022D6AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A8F2658A1D22E1500022D6AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A8F2658B1D22E1500022D6AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A8F265901D22E1500022D6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8F265951D22E1500022D6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8F2659A1D22E1500022D6AC /* SuperSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8F2659E1D22E1500022D6AC /* SuperSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperSDKTests.m; sourceTree = "<group>"; };
-		A8F265A01D22E1500022D6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8F265A51D22E1500022D6AC /* SuperSDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperSDKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8F265A91D22E1510022D6AC /* SuperSDKUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperSDKUITests.m; sourceTree = "<group>"; };
-		A8F265AB1D22E1510022D6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8F265BC1D22E8420022D6AC /* STools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STools.h; sourceTree = "<group>"; };
 		A8F265BD1D22E8420022D6AC /* STools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A8F2657E1D22E1500022D6AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F265971D22E1500022D6AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F265A21D22E1500022D6AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,12 +145,45 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		A8F102641D97817D00DA8E93 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A8F102671D9781DC00DA8E93 /* Service */,
+				A8F102661D9781D400DA8E93 /* Model */,
+				A8F102651D9781BA00DA8E93 /* ViewController */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		A8F102651D9781BA00DA8E93 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A8F102681D982AC700DA8E93 /* SOneViewController.h */,
+				A8F102691D982AC700DA8E93 /* SOneViewController.m */,
+				A8F1026B1D982AD500DA8E93 /* STwoViewController.h */,
+				A8F1026C1D982AD500DA8E93 /* STwoViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A8F102661D9781D400DA8E93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8F102671D9781DC00DA8E93 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A8F265781D22E1500022D6AC = {
 			isa = PBXGroup;
 			children = (
 				A8F265831D22E1500022D6AC /* SuperSDK */,
-				A8F2659D1D22E1500022D6AC /* SuperSDKTests */,
-				A8F265A81D22E1500022D6AC /* SuperSDKUITests */,
 				A8F265821D22E1500022D6AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,8 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				A8F265811D22E1500022D6AC /* SuperSDK.app */,
-				A8F2659A1D22E1500022D6AC /* SuperSDKTests.xctest */,
-				A8F265A51D22E1500022D6AC /* SuperSDKUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +199,7 @@
 		A8F265831D22E1500022D6AC /* SuperSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A8F102641D97817D00DA8E93 /* Demo */,
 				A84983551D32BFB200DB048C /* AFNetworking */,
 				A8F265B71D22E1890022D6AC /* SuperSDK */,
 				A8F265871D22E1500022D6AC /* AppDelegate.h */,
@@ -216,12 +208,6 @@
 				A84983761D4A617000DB048C /* SDataRequestOperation.m */,
 				A84983781D4A641400DB048C /* SDataRequestDemo.h */,
 				A84983791D4A641400DB048C /* SDataRequestDemo.m */,
-				A8F2658A1D22E1500022D6AC /* ViewController.h */,
-				A8F2658B1D22E1500022D6AC /* ViewController.m */,
-				A8F1025B1D9664B300DA8E93 /* SUIViewControllerOne.h */,
-				A8F1025C1D9664B300DA8E93 /* SUIViewControllerOne.m */,
-				A8F1025E1D9664C300DA8E93 /* SUIViewControllerTwo.h */,
-				A8F1025F1D9664C300DA8E93 /* SUIViewControllerTwo.m */,
 				A8F265901D22E1500022D6AC /* Assets.xcassets */,
 				A8F265951D22E1500022D6AC /* Info.plist */,
 				A8F265841D22E1500022D6AC /* Supporting Files */,
@@ -233,26 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				A8F265851D22E1500022D6AC /* main.m */,
+				A8F102621D9665AB00DA8E93 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A8F2659D1D22E1500022D6AC /* SuperSDKTests */ = {
-			isa = PBXGroup;
-			children = (
-				A8F2659E1D22E1500022D6AC /* SuperSDKTests.m */,
-				A8F265A01D22E1500022D6AC /* Info.plist */,
-			);
-			path = SuperSDKTests;
-			sourceTree = "<group>";
-		};
-		A8F265A81D22E1500022D6AC /* SuperSDKUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A8F265A91D22E1510022D6AC /* SuperSDKUITests.m */,
-				A8F265AB1D22E1510022D6AC /* Info.plist */,
-			);
-			path = SuperSDKUITests;
 			sourceTree = "<group>";
 		};
 		A8F265B71D22E1890022D6AC /* SuperSDK */ = {
@@ -263,6 +232,7 @@
 				A8F265BA1D22E3AB0022D6AC /* SuperTools */,
 				A8F265B91D22E2410022D6AC /* SuperNavigation */,
 				A8F265B81D22E1B20022D6AC /* SuperDataRequest */,
+				A8F102631D9665F700DA8E93 /* SuperSDKHeader.h */,
 			);
 			path = SuperSDK;
 			sourceTree = "<group>";
@@ -274,8 +244,8 @@
 				A849834D1D316F1800DB048C /* SDataRequestManager.m */,
 				A84983521D32BE8000DB048C /* SDataRequest.h */,
 				A84983531D32BE8000DB048C /* SDataRequest.m */,
-				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
 				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
+				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
 				A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */,
 				A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */,
 				A849837B1D50F97B00DB048C /* SDataRequestParser.h */,
@@ -338,42 +308,6 @@
 			productReference = A8F265811D22E1500022D6AC /* SuperSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A8F265991D22E1500022D6AC /* SuperSDKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8F265B11D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKTests" */;
-			buildPhases = (
-				A8F265961D22E1500022D6AC /* Sources */,
-				A8F265971D22E1500022D6AC /* Frameworks */,
-				A8F265981D22E1500022D6AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A8F2659C1D22E1500022D6AC /* PBXTargetDependency */,
-			);
-			name = SuperSDKTests;
-			productName = SuperSDKTests;
-			productReference = A8F2659A1D22E1500022D6AC /* SuperSDKTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A8F265A41D22E1500022D6AC /* SuperSDKUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8F265B41D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKUITests" */;
-			buildPhases = (
-				A8F265A11D22E1500022D6AC /* Sources */,
-				A8F265A21D22E1500022D6AC /* Frameworks */,
-				A8F265A31D22E1500022D6AC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A8F265A71D22E1500022D6AC /* PBXTargetDependency */,
-			);
-			name = SuperSDKUITests;
-			productName = SuperSDKUITests;
-			productReference = A8F265A51D22E1500022D6AC /* SuperSDKUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -386,14 +320,6 @@
 				TargetAttributes = {
 					A8F265801D22E1500022D6AC = {
 						CreatedOnToolsVersion = 7.3;
-					};
-					A8F265991D22E1500022D6AC = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = A8F265801D22E1500022D6AC;
-					};
-					A8F265A41D22E1500022D6AC = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = A8F265801D22E1500022D6AC;
 					};
 				};
 			};
@@ -411,8 +337,6 @@
 			projectRoot = "";
 			targets = (
 				A8F265801D22E1500022D6AC /* SuperSDK */,
-				A8F265991D22E1500022D6AC /* SuperSDKTests */,
-				A8F265A41D22E1500022D6AC /* SuperSDKUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,20 +350,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8F265981D22E1500022D6AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F265A31D22E1500022D6AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -448,17 +358,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A84983691D32BFB200DB048C /* AFHTTPRequestOperation.m in Sources */,
-				A8F2658C1D22E1500022D6AC /* ViewController.m in Sources */,
 				A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */,
 				A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */,
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,
 				A849836B1D32BFB200DB048C /* AFHTTPSessionManager.m in Sources */,
-				A8F102601D9664C300DA8E93 /* SUIViewControllerTwo.m in Sources */,
+				A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */,
 				A849834E1D316F1800DB048C /* SDataRequestManager.m in Sources */,
 				A849836C1D32BFB200DB048C /* AFNetworkReachabilityManager.m in Sources */,
 				A849834B1D2ACB9E00DB048C /* UIViewController+SNavigationController.m in Sources */,
 				A84983741D3BEAA600DB048C /* NSObject+SDataRequestManager.m in Sources */,
+				A8F1026A1D982AC700DA8E93 /* SOneViewController.m in Sources */,
 				A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */,
 				A849836F1D32BFB200DB048C /* AFURLRequestSerialization.m in Sources */,
 				A849836E1D32BFB200DB048C /* AFURLConnectionOperation.m in Sources */,
@@ -469,7 +379,6 @@
 				A84983511D32BCB000DB048C /* SNavigationParser.m in Sources */,
 				A849837D1D50F97B00DB048C /* SDataRequestParser.m in Sources */,
 				A849836D1D32BFB200DB048C /* AFSecurityPolicy.m in Sources */,
-				A8F1025D1D9664B300DA8E93 /* SUIViewControllerOne.m in Sources */,
 				A8F265861D22E1500022D6AC /* main.m in Sources */,
 				A84983481D251E8100DB048C /* SQRView.m in Sources */,
 				A8F265BE1D22E8420022D6AC /* STools.m in Sources */,
@@ -478,36 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8F265961D22E1500022D6AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8F2659F1D22E1500022D6AC /* SuperSDKTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8F265A11D22E1500022D6AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8F265AA1D22E1510022D6AC /* SuperSDKUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A8F2659C1D22E1500022D6AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A8F265801D22E1500022D6AC /* SuperSDK */;
-			targetProxy = A8F2659B1D22E1500022D6AC /* PBXContainerItemProxy */;
-		};
-		A8F265A71D22E1500022D6AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A8F265801D22E1500022D6AC /* SuperSDK */;
-			targetProxy = A8F265A61D22E1500022D6AC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A8F265AC1D22E1510022D6AC /* Debug */ = {
@@ -596,6 +476,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/liuchao/Desktop/SuperSDK/SuperSDK/PrefixHeader.pch;
 				INFOPLIST_FILE = SuperSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDK;
@@ -607,56 +489,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/liuchao/Desktop/SuperSDK/SuperSDK/PrefixHeader.pch;
 				INFOPLIST_FILE = SuperSDK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		A8F265B21D22E1510022D6AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SuperSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperSDK.app/SuperSDK";
-			};
-			name = Debug;
-		};
-		A8F265B31D22E1510022D6AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = SuperSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperSDK.app/SuperSDK";
-			};
-			name = Release;
-		};
-		A8F265B51D22E1510022D6AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SuperSDKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SuperSDK;
-			};
-			name = Debug;
-		};
-		A8F265B61D22E1510022D6AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = SuperSDKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = SuperSDK;
 			};
 			name = Release;
 		};
@@ -677,24 +515,6 @@
 			buildConfigurations = (
 				A8F265AF1D22E1510022D6AC /* Debug */,
 				A8F265B01D22E1510022D6AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8F265B11D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8F265B21D22E1510022D6AC /* Debug */,
-				A8F265B31D22E1510022D6AC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8F265B41D22E1510022D6AC /* Build configuration list for PBXNativeTarget "SuperSDKUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8F265B51D22E1510022D6AC /* Debug */,
-				A8F265B61D22E1510022D6AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
