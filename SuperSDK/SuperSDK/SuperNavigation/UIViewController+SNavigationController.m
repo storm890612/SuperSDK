@@ -8,7 +8,7 @@
 
 #import "UIViewController+SNavigationController.h"
 #import <objc/runtime.h>
-static NSString *s_parameters_key;
+static NSString *s_parameters_key = @"s_parameters_key";
 @implementation UIViewController (SNavigationController)
 @dynamic s_parameters;
 // 每次取值都会清空这个对象，请自己保存在自己的业务类里面

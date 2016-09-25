@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+SNavigationController.h"
+
 
 @interface UINavigationController(SNavigationController)
 - (void)gotoPage:(NSString *)pageName;

@@ -31,13 +31,15 @@ static NSString *s_parameters_key = @"s_parameters";
         SWebViewController *webVC = [SWebViewController new];
         webVC.URLString = pageName;
         vc = webVC;
-    } else if ([pageName hasPrefix:[SNavigationParser sharedNavigationParser].URLSchemes]) {
+    } else if ([SNavigationParser sharedNavigationParser].URLSchemes.length > 0 &&
+               [pageName hasPrefix:[SNavigationParser sharedNavigationParser].URLSchemes]) {
         [pageName getPageName:&vcName pageParameters:&vcParameters];
-        vc = (UIViewController *)NSClassFromString(vcName);
+        Class viewControllerClass = NSClassFromString(vcName);
+        vc = [[viewControllerClass alloc] init];
     } else {
-        vc = (UIViewController *)NSClassFromString(pageName);
+        Class viewControllerClass = NSClassFromString(pageName);
+        vc = [[viewControllerClass alloc] init];
     }
-
     if (!vc) {
         return;
     }

@@ -80,7 +80,8 @@
 
 - (SDataRequest *)registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters
 {
-    SDataRequest *dataRequest = (SDataRequest *)NSClassFromString(name);
+    Class dataRequestClass = NSClassFromString(name);
+    SDataRequest *dataRequest = [[dataRequestClass alloc] init];
     dataRequest.businessParameters = parameters;
     dataRequest.delegate = self;
     dataRequest.dataRequestID = self.dataRequestCount++; // 写法不严谨，但是能满足99%的APP吧……
