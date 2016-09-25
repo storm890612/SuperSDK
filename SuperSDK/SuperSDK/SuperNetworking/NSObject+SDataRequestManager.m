@@ -19,6 +19,32 @@ static NSString *s_dataRequests_key;
     [self.s_dataRequests addObject:[SWeakDataRequest weakDataRequest:dataRequest]];
     return dataRequest;
 }
+
+- (SDataRequest *)s_registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters target:(id)target action:(SEL)action
+{
+    SDataRequest *dataRequest =  [SDataRequestManager registerDataRequestByName:name parameters:parameters target:target action:action];
+    [self.s_dataRequests addObject:[SWeakDataRequest weakDataRequest:dataRequest]];
+    return dataRequest;
+}
+
+- (SDataRequest *)s_sendDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
+    SDataRequest *dataRequest = [SDataRequestManager sendDataRequestByName:name parameters:parameters callBack:callBack];
+    [self.s_dataRequests addObject:[SWeakDataRequest weakDataRequest:dataRequest]];
+    return dataRequest;
+}
+
+- (SDataRequest *)s_registerDataRequestByName:(NSString *)name parameters:(NSDictionary *)parameters callBack:(SDataRequestCallBackBlock)callBack
+{
+    SDataRequest *dataRequest = [SDataRequestManager registerDataRequestByName:name parameters:parameters callBack:callBack];
+    [self.s_dataRequests addObject:[SWeakDataRequest weakDataRequest:dataRequest]];
+    return dataRequest;
+}
+- (void)s_removeDataRequest:(SDataRequest *)dataRequest
+{
+    [SDataRequestManager removeDataRequest:dataRequest];
+}
+
 - (void)s_cancelAllRequest {
     for (SWeakDataRequest *weakdataRequest in self.s_dataRequests) {
         SDataRequest *dataRequest = weakdataRequest.dataRequest;

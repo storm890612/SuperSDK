@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class SDataRequest;
+#import "SDataRequest.h"
 typedef void(^SDataRequestCallBackBlock)(SDataRequest *dataRequest);
 
 @interface SDataRequestManager : NSObject
