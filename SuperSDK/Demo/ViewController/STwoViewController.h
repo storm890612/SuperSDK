@@ -6,8 +6,8 @@
 //  Copyright © 2016年 SuperMan. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SDemoBaseViewController.h"
 
-@interface STwoViewController : UIViewController
+@interface STwoViewController : SDemoBaseViewController
 
 @end

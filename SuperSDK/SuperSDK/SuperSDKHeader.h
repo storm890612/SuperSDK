@@ -13,5 +13,5 @@
 #import "UIViewController+SNavigationController.h"
 
 #import "SDataRequestManager.h"
-
+#import "NSObject+SDataRequestManager.h"
 #endif /* SuperSDKHeader_h */

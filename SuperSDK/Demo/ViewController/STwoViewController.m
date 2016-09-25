@@ -9,7 +9,9 @@
 #import "STwoViewController.h"
 
 @interface STwoViewController ()
-@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIButton *buttonOne;
+@property (nonatomic, strong) UIButton *buttonTwo;
+
 @end
 
 @implementation STwoViewController
@@ -17,30 +19,52 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = self.s_parameters[@"title"];
-    [self.view addSubview:self.button];
+    [self.view addSubview:self.buttonOne];
+    [self.view addSubview:self.buttonTwo];
+
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     CGFloat buttonWidth = 100;
-    self.button.frame = CGRectMake((self.view.frame.size.width - buttonWidth) / 2.0, 100, buttonWidth, 50);
+    CGFloat buttonHeight = 50;
+    self.buttonOne.frame = CGRectMake((self.view.frame.size.width - buttonWidth) / 2.0, 100, buttonWidth, buttonHeight);
+    
+    self.buttonOne.frame = CGRectMake(CGRectGetMinX(self.buttonOne.frame), CGRectGetMaxY(self.buttonOne.frame) + 30, buttonWidth, buttonHeight);
 }
 
-- (void)gotoPageTwo
+- (void)getDataOne
 {
-    [self.navigationController gotoPage:@"SUIViewControllerOne" parameters:@{@"title" : @"pageTwo"}];
+    [SDataRequestManager sendDataRequestByName:@"demo" parameters:@{@"":@""} callBack:^(SDataRequest *dataRequest) {
+        
+    }];
 }
 
-- (UIButton *)button
+- (void)getDataTwo
 {
-    if (!_button) {
-        _button = [UIButton new];
-        [_button setTitle:@"gotoPageTwo" forState:UIControlStateNormal];
-        [_button addTarget:self action:@selector(gotoPageTwo) forControlEvents:UIControlEventTouchUpInside];
-        [_button setBackgroundColor:[UIColor redColor]];
+    [self s_registerDataRequestByName:@"" parameters:@{} target:self action:@selector(dataOne:)];
+}
+
+- (void)dataOne:(SDataRequest *)dataRequest
+{
+    
+}
+
+- (void)dataTwo:(SDataRequest *)dataRequest
+{
+    
+}
+
+- (UIButton *)buttonOne
+{
+    if (!_buttonOne) {
+        _buttonOne = [UIButton new];
+        [_buttonOne setTitle:@"getDataOne" forState:UIControlStateNormal];
+        [_buttonOne addTarget:self action:@selector(getDataOne) forControlEvents:UIControlEventTouchUpInside];
+        [_buttonOne setBackgroundColor:[UIColor redColor]];
     }
-    return _button;
+    return _buttonOne;
 }
 
 

@@ -31,6 +31,10 @@
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
 		A8F1026A1D982AC700DA8E93 /* SOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102691D982AC700DA8E93 /* SOneViewController.m */; };
 		A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1026C1D982AD500DA8E93 /* STwoViewController.m */; };
+		A8F102701D982EEF00DA8E93 /* SDataOneDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1026F1D982EEF00DA8E93 /* SDataOneDataRequest.m */; };
+		A8F102731D982F0400DA8E93 /* SDataTwoDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102721D982F0400DA8E93 /* SDataTwoDataRequest.m */; };
+		A8F102771D982F7D00DA8E93 /* SDemoBaseDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102761D982F7D00DA8E93 /* SDemoBaseDataRequest.m */; };
+		A8F1027A1D982F9800DA8E93 /* SDemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102791D982F9800DA8E93 /* SDemoBaseViewController.m */; };
 		A8F265861D22E1500022D6AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265851D22E1500022D6AC /* main.m */; };
 		A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F265881D22E1500022D6AC /* AppDelegate.m */; };
 		A8F265911D22E1500022D6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F265901D22E1500022D6AC /* Assets.xcassets */; };
@@ -89,6 +93,14 @@
 		A8F102691D982AC700DA8E93 /* SOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOneViewController.m; sourceTree = "<group>"; };
 		A8F1026B1D982AD500DA8E93 /* STwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STwoViewController.h; sourceTree = "<group>"; };
 		A8F1026C1D982AD500DA8E93 /* STwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STwoViewController.m; sourceTree = "<group>"; };
+		A8F1026E1D982EEF00DA8E93 /* SDataOneDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataOneDataRequest.h; sourceTree = "<group>"; };
+		A8F1026F1D982EEF00DA8E93 /* SDataOneDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataOneDataRequest.m; sourceTree = "<group>"; };
+		A8F102711D982F0400DA8E93 /* SDataTwoDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataTwoDataRequest.h; sourceTree = "<group>"; };
+		A8F102721D982F0400DA8E93 /* SDataTwoDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataTwoDataRequest.m; sourceTree = "<group>"; };
+		A8F102751D982F7D00DA8E93 /* SDemoBaseDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDemoBaseDataRequest.h; sourceTree = "<group>"; };
+		A8F102761D982F7D00DA8E93 /* SDemoBaseDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDemoBaseDataRequest.m; sourceTree = "<group>"; };
+		A8F102781D982F9800DA8E93 /* SDemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDemoBaseViewController.h; sourceTree = "<group>"; };
+		A8F102791D982F9800DA8E93 /* SDemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDemoBaseViewController.m; sourceTree = "<group>"; };
 		A8F265811D22E1500022D6AC /* SuperSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F265851D22E1500022D6AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A8F265871D22E1500022D6AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +160,7 @@
 		A8F102641D97817D00DA8E93 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A8F102741D982F4600DA8E93 /* BaseClass */,
 				A8F102671D9781DC00DA8E93 /* Service */,
 				A8F102661D9781D400DA8E93 /* Model */,
 				A8F102651D9781BA00DA8E93 /* ViewController */,
@@ -176,8 +189,23 @@
 		A8F102671D9781DC00DA8E93 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A8F1026E1D982EEF00DA8E93 /* SDataOneDataRequest.h */,
+				A8F1026F1D982EEF00DA8E93 /* SDataOneDataRequest.m */,
+				A8F102711D982F0400DA8E93 /* SDataTwoDataRequest.h */,
+				A8F102721D982F0400DA8E93 /* SDataTwoDataRequest.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		A8F102741D982F4600DA8E93 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				A8F102751D982F7D00DA8E93 /* SDemoBaseDataRequest.h */,
+				A8F102761D982F7D00DA8E93 /* SDemoBaseDataRequest.m */,
+				A8F102781D982F9800DA8E93 /* SDemoBaseViewController.h */,
+				A8F102791D982F9800DA8E93 /* SDemoBaseViewController.m */,
+			);
+			path = BaseClass;
 			sourceTree = "<group>";
 		};
 		A8F265781D22E1500022D6AC = {
@@ -244,8 +272,8 @@
 				A849834D1D316F1800DB048C /* SDataRequestManager.m */,
 				A84983521D32BE8000DB048C /* SDataRequest.h */,
 				A84983531D32BE8000DB048C /* SDataRequest.m */,
-				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
 				A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */,
+				A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */,
 				A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */,
 				A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */,
 				A849837B1D50F97B00DB048C /* SDataRequestParser.h */,
@@ -362,7 +390,9 @@
 				A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */,
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,
+				A8F102771D982F7D00DA8E93 /* SDemoBaseDataRequest.m in Sources */,
 				A849836B1D32BFB200DB048C /* AFHTTPSessionManager.m in Sources */,
+				A8F102731D982F0400DA8E93 /* SDataTwoDataRequest.m in Sources */,
 				A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */,
 				A849834E1D316F1800DB048C /* SDataRequestManager.m in Sources */,
 				A849836C1D32BFB200DB048C /* AFNetworkReachabilityManager.m in Sources */,
@@ -372,9 +402,11 @@
 				A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */,
 				A849836F1D32BFB200DB048C /* AFURLRequestSerialization.m in Sources */,
 				A849836E1D32BFB200DB048C /* AFURLConnectionOperation.m in Sources */,
+				A8F1027A1D982F9800DA8E93 /* SDemoBaseViewController.m in Sources */,
 				A849836A1D32BFB200DB048C /* AFHTTPRequestOperationManager.m in Sources */,
 				A84983771D4A617000DB048C /* SDataRequestOperation.m in Sources */,
 				A84983801D51073600DB048C /* SDataRequestCallBackItem.m in Sources */,
+				A8F102701D982EEF00DA8E93 /* SDataOneDataRequest.m in Sources */,
 				A84983541D32BE8000DB048C /* SDataRequest.m in Sources */,
 				A84983511D32BCB000DB048C /* SNavigationParser.m in Sources */,
 				A849837D1D50F97B00DB048C /* SDataRequestParser.m in Sources */,

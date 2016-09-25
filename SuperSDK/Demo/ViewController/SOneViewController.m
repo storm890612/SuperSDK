@@ -16,7 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = self.s_parameters[@"title"];
+    self.navigationItem.title = @"pageOne";
     [self.view addSubview:self.button];
 }
 
