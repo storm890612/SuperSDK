@@ -7,7 +7,15 @@
 //
 
 #import "SDataOneDataRequest.h"
-
+#import "SHTTPSessionManager.h"
 @implementation SDataOneDataRequest
 
+- (void)loadData
+{
+    [[SHTTPSessionManager sharedManager] GET:@"http://httpbin.org/get" parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        
+    }];
+}
 @end

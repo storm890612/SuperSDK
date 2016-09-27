@@ -59,7 +59,6 @@ static NSString *s_dataRequests_key;
         if (index != NSNotFound) {
             [self.s_dataRequests removeObjectAtIndex:index];
         }
-
     }
 }
 

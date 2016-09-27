@@ -28,6 +28,7 @@
 		A84983801D51073600DB048C /* SDataRequestCallBackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A849837F1D51073600DB048C /* SDataRequestCallBackItem.m */; };
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
+		A87932781D998A5A00EACC6A /* SHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */; };
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
 		A8F1026A1D982AC700DA8E93 /* SOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102691D982AC700DA8E93 /* SOneViewController.m */; };
 		A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1026C1D982AD500DA8E93 /* STwoViewController.m */; };
@@ -85,6 +86,8 @@
 		A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+SNavigationController.m"; sourceTree = "<group>"; };
 		A84B81FF1D22F0F200DD3513 /* SWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWebViewController.h; sourceTree = "<group>"; };
 		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
+		A87932761D998A5A00EACC6A /* SHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTTPSessionManager.h; sourceTree = "<group>"; };
+		A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTTPSessionManager.m; sourceTree = "<group>"; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
 		A8F102621D9665AB00DA8E93 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				A8F102761D982F7D00DA8E93 /* SDemoBaseDataRequest.m */,
 				A8F102781D982F9800DA8E93 /* SDemoBaseViewController.h */,
 				A8F102791D982F9800DA8E93 /* SDemoBaseViewController.m */,
+				A87932761D998A5A00EACC6A /* SHTTPSessionManager.h */,
+				A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			files = (
 				A84983691D32BFB200DB048C /* AFHTTPRequestOperation.m in Sources */,
 				A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */,
+				A87932781D998A5A00EACC6A /* SHTTPSessionManager.m in Sources */,
 				A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */,
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,

@@ -36,14 +36,17 @@
 
 - (void)getDataOne
 {
-    [SDataRequestManager sendDataRequestByName:@"demo" parameters:@{@"":@""} callBack:^(SDataRequest *dataRequest) {
+    [SDataRequestManager sendDataRequestByName:@"SDataOneDataRequest" parameters:@{@"name":@"test"} callBack:^(SDataRequest *dataRequest) {
         
     }];
 }
 
 - (void)getDataTwo
 {
-    [self s_registerDataRequestByName:@"" parameters:@{} target:self action:@selector(dataOne:)];
+    SDataRequest *dataRequestOne = [self s_registerDataRequestByName:@"SDataOneDataRequest" parameters:@{@"name":@"test"} target:self action:@selector(dataOne:)];
+    SDataRequest *dataRequestTwo = [self s_registerDataRequestByName:@"SDataTwoDataRequest" parameters:@{@"name":@"xxx"} target:self action:@selector(dataTwo:)];
+    [dataRequestOne addDependency:dataRequestTwo];
+    [dataRequestOne start];
 }
 
 - (void)dataOne:(SDataRequest *)dataRequest
