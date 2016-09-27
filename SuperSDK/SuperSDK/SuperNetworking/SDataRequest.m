@@ -19,9 +19,6 @@
         if (self.state == SDataRequestStateExecuting) {
             self.responseData = data;
             self.state = SDataRequestStateFinished;
-            for (SDataRequest *dataRequest in self.dependencyDataRequests) {
-                [dataRequest start];
-            }
         }
     }
 }
@@ -50,6 +47,13 @@
 - (void)removeDependency:(SDataRequest *)dataRequest {
     [self.dependencyDataRequests removeObject:dataRequest];
 }
+- (void)beginDependencyDataRequest
+{
+    for (SDataRequest *dataRequest in self.dependencyDataRequests) {
+        [dataRequest start];
+    }
+    [self.dependencyDataRequests removeAllObjects];
+}
 
 - (void)setState:(SDataRequestState)state {
     // 只能进行一次结束状态赋值 如果已经 结束、取消、超时 其中任何一种情况就不能再次赋值了
@@ -59,10 +63,10 @@
             _state = state;
             [self didEndDataRequest];
             [self.delegate didEndDataRequest:self];
+            [self beginDependencyDataRequest];
         } else if (state <= 1) {
             _state = state;
         }
     }
-
 }
 @end
