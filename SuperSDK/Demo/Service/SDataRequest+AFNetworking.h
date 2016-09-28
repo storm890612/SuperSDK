@@ -9,6 +9,17 @@
 #import "SDataRequest.h"
 #import "SHTTPSessionManager.h"
 @interface SDataRequest (AFNetworking)
+
 - (SHTTPSessionManager *)HTTPSessionManager;
-- (void)
+
+@property NSURLRequestCachePolicy requestCachePolicy;
+
+@property NSTimeInterval timeoutIntervalForRequest;
+
+@property NSTimeInterval timeoutIntervalForResource;
+
+@property NSURLRequestNetworkServiceType networkServiceType;
+
+@property BOOL allowsCellularAccess;
+
 @end
