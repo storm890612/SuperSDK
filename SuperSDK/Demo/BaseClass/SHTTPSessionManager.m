@@ -15,7 +15,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
-        configuration.URLCache = [[NSURLCache alloc] initWithMemoryCapacity:100 diskCapacity:100 diskPath:@""];
+        configuration.URLCache = [NSURLCache sharedURLCache];
         manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
     });
     return (SHTTPSessionManager *)manager;

@@ -9,7 +9,6 @@
 #import "SDataRequest.h"
 @interface SDataRequest ()
 @property (nonatomic, readwrite, assign) SDataRequestState state;                // 请求的状态
-@property (nonatomic, readwrite, strong) id responseData;                        // 请求返回的对象
 @property (nonatomic, readwrite,   copy) NSDictionary *parameters;               // 请求的全部参数
 @property (nonatomic, strong) NSMutableArray *dependencyDataRequests;
 @end

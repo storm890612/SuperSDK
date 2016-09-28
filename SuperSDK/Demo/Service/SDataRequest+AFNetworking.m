@@ -21,9 +21,46 @@
     return HTTPSessionManager;
 }
 
+- (NSString *)requestMethod
+{
+    return nil;
+}
+
+- (NSString *)URLString
+{
+    return nil;
+}
+
+- (NSURLRequest *)URLRequestWithError:(NSError *)error
+{
+    return [self.HTTPSessionManager.requestSerializer requestWithMethod:[self requestMethod] URLString:[self URLString] parameters:self.parameters error:&error];
+}
+
+- (NSURLSessionDataTask *)dataTask
+{
+    NSError *serializationError;
+    NSURLRequest *request = [self URLRequestWithError:serializationError];
+    if (serializationError) {
+        self.error = serializationError;
+        [self submitData:nil];
+        return nil;
+    }
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (error) {
+            self.error = serializationError;
+            [self submitData:nil];
+        } else {
+            self.error = serializationError;
+            [self submitData:responseObject];
+        }
+    }];
+    return dataTask;
+}
+
 - (NSURLRequestCachePolicy)requestCachePolicy
 {
-    return NSURLRequestUseProtocolCachePolicy;
+    return NSURLRequestReloadRevalidatingCacheData;
 }
 - (void)setRequestCachePolicy:(NSURLRequestCachePolicy)requestCachePolicy
 {

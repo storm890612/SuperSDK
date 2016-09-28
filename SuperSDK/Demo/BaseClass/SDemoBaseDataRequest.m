@@ -11,11 +11,12 @@
 @implementation SDemoBaseDataRequest
 - (void)willStartDataRequest
 {
-    
+    // 加密参数
 }
 - (void)didEndDataRequest
 {
-    
+    // 解密结果
+    self.responseData = [NSDictionary new];
 }
 
 @end

@@ -12,6 +12,14 @@
 
 - (SHTTPSessionManager *)HTTPSessionManager;
 
+- (NSString *)requestMethod;
+
+- (NSString *)URLString;
+
+- (NSURLRequest *)URLRequestWithError:(NSError *)error;
+
+- (NSURLSessionDataTask *)dataTask;
+
 @property NSURLRequestCachePolicy requestCachePolicy;
 
 @property NSTimeInterval timeoutIntervalForRequest;

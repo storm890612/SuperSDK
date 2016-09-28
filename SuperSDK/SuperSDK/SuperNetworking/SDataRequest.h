@@ -30,7 +30,9 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
 @property (nonatomic,   copy) NSDictionary *businessParameters;                 // 某个业务请求的具体参数
 @property (nonatomic, readonly,   copy) NSDictionary *parameters;               // 请求的全部参数
 @property (nonatomic, readonly, assign) SDataRequestState state;                // 请求的状态
-@property (nonatomic, readonly, strong) id responseData;                        // 请求返回的对象
+@property (nonatomic, strong) id responseData;                        // 请求返回的对象
+@property (nonatomic, strong) NSError *error;                         // 请求错误对象
+
 // 获取基础参数 需要子类重写
 - (NSDictionary *)baseParameters;
 // 请求的全部参数 默认自动组合 baseParameters 和 businessParameters
