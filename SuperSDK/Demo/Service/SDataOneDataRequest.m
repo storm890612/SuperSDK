@@ -12,7 +12,9 @@
 
 - (void)loadData
 {
-    [[SHTTPSessionManager sharedManager] GET:@"http://httpbin.org/get" parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+    self.HTTPSessionManager.session.configuration.timeoutIntervalForRequest = 10;
+    self.HTTPSessionManager.session.
+    [self.HTTPSessionManager GET:@"http://httpbin.org/get" parameters:self.parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         

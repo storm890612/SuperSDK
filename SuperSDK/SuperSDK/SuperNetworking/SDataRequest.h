@@ -10,8 +10,7 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
     SDataRequestStateWaiting        = 0,
     SDataRequestStateExecuting      = 1,
     SDataRequestStateCancel         = 2,
-    SDataRequestStateFinished       = 3,
-    SDataRequestStateTimeout        = 4
+    SDataRequestStateFinished       = 3
 };
 
 /*
@@ -22,9 +21,7 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
 @protocol SDataRequestDelegate <NSObject>
 @required
 - (void)didEndDataRequest:(SDataRequest *)dataRequest;
-
 @end
-
 
 @interface SDataRequest : NSObject
 @property (nonatomic, assign) NSInteger dataRequestID;                          // 请求id

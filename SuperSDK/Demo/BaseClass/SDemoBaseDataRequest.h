@@ -7,6 +7,7 @@
 //
 
 #import "SDataRequest.h"
+#import "SDataRequest+AFNetworking.h"
 
 @interface SDemoBaseDataRequest : SDataRequest
 
