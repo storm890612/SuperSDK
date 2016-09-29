@@ -16,7 +16,6 @@
 - (void)didEndDataRequest
 {
     // 解密结果
-    self.responseData = [NSDictionary new];
 }
 
 @end

@@ -9,5 +9,10 @@
 #import "SDataTwoDataRequest.h"
 
 @implementation SDataTwoDataRequest
+- (void)loadData
+{
+    sleep(2);
 
+    [self submitData:@{@"dataTwo":self.parameters[@"name"]}];
+}
 @end

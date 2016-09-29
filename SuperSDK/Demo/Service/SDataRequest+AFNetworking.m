@@ -59,10 +59,10 @@ static NSString *s_dataTask_key = @"s_dataTask_key";
         __block NSURLSessionDataTask *dataTask = nil;
         dataTask = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
             if (error) {
-                self.error = serializationError;
+                self.error = error;
                 [self submitData:nil];
             } else {
-                self.error = serializationError;
+                self.error = nil;
                 [self submitData:responseObject];
             }
         }];
@@ -75,7 +75,6 @@ static NSString *s_dataTask_key = @"s_dataTask_key";
 {
     objc_setAssociatedObject(self, &s_dataTask_key, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 
 - (NSURLRequestCachePolicy)requestCachePolicy
 {

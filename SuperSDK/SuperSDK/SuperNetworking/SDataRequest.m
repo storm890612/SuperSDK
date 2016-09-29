@@ -16,11 +16,23 @@
 
 @implementation SDataRequest
 
+- (NSDictionary *)parameters
+{
+    NSMutableDictionary *mutableParameters = [NSMutableDictionary new];
+    if (self.baseParameters) {
+        [mutableParameters addEntriesFromDictionary:self.baseParameters];
+    }
+    if (self.businessParameters) {
+        [mutableParameters addEntriesFromDictionary:self.businessParameters];
+    }
+    return [mutableParameters copy];
+}
+
 - (void)submitData:(id)data
 {
     @synchronized (self) {
         if (self.state == SDataRequestStateExecuting) {
-            self.responseData = [self encryptionData:data];
+            self.responseData = [self decryptionData:data];
             self.state = SDataRequestStateFinished;
         }
     }
@@ -96,5 +108,12 @@
             _state = state;
         }
     }
+}
+- (NSMutableArray *)dependencyDataRequests
+{
+    if (!_dependencyDataRequests) {
+        _dependencyDataRequests = [NSMutableArray new];
+    }
+    return _dependencyDataRequests;
 }
 @end

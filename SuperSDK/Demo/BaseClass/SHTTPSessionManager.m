@@ -14,7 +14,7 @@
     static AFHTTPSessionManager *manager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.URLCache = [NSURLCache sharedURLCache];
         manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
     });
