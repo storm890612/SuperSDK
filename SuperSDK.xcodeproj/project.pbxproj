@@ -31,6 +31,7 @@
 		A87932781D998A5A00EACC6A /* SHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */; };
 		A87932821D9AD79E00EACC6A /* SDataRequest+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A87932811D9AD79E00EACC6A /* SDataRequest+AFNetworking.m */; };
 		A87932841D9AD9A500EACC6A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A87932831D9AD9A500EACC6A /* Default-568h@2x.png */; };
+		A8EB948A1D9CFE28000C101C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EB94861D9CF013000C101C /* MediaPlayer.framework */; };
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
 		A8F1026A1D982AC700DA8E93 /* SOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102691D982AC700DA8E93 /* SOneViewController.m */; };
 		A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1026C1D982AD500DA8E93 /* STwoViewController.m */; };
@@ -93,6 +94,7 @@
 		A87932801D9AD79E00EACC6A /* SDataRequest+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDataRequest+AFNetworking.h"; sourceTree = "<group>"; };
 		A87932811D9AD79E00EACC6A /* SDataRequest+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDataRequest+AFNetworking.m"; sourceTree = "<group>"; };
 		A87932831D9AD9A500EACC6A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A8EB94861D9CF013000C101C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
 		A8F102621D9665AB00DA8E93 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8EB948A1D9CFE28000C101C /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +166,14 @@
 				A84983681D32BFB200DB048C /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A8EB94851D9CF013000C101C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8EB94861D9CF013000C101C /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A8F102641D97817D00DA8E93 /* Demo */ = {
@@ -226,6 +237,7 @@
 				A87932831D9AD9A500EACC6A /* Default-568h@2x.png */,
 				A8F265831D22E1500022D6AC /* SuperSDK */,
 				A8F265821D22E1500022D6AC /* Products */,
+				A8EB94851D9CF013000C101C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -361,6 +373,8 @@
 				TargetAttributes = {
 					A8F265801D22E1500022D6AC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2WUTPC2KR8;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -475,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -513,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -524,9 +538,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2WUTPC2KR8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = SuperSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,9 +554,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2WUTPC2KR8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperSDK/PrefixHeader.pch";
 				INFOPLIST_FILE = SuperSDK/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SuperMan.SuperSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";

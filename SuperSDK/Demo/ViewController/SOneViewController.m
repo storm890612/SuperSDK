@@ -29,7 +29,7 @@
 
 - (void)gotoPageTwo
 {
-    [self.navigationController gotoPage:@"SUIViewControllerOne" parameters:@{@"title" : @"pageTwo"}];
+    [self.navigationController gotoPage:@"STwoViewController" parameters:@{@"title" : @"pageTwo"}];
 }
 
 - (UIButton *)button

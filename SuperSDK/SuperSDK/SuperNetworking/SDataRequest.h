@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
 @property (nonatomic,   weak) id <SDataRequestDelegate> delegate;
 @property (nonatomic,   copy) NSDictionary *baseParameters;                     // 所有请求的基础参数
 @property (nonatomic,   copy) NSDictionary *businessParameters;                 // 某个业务请求的具体参数
-@property (nonatomic, readonly,   copy) NSDictionary *parameters;               // 请求的全部参数
+@property (nonatomic,   copy) NSDictionary *parameters;               // 请求的全部参数
 @property (nonatomic, readonly, assign) SDataRequestState state;                // 请求的状态
 @property (nonatomic, strong) id responseData;                        // 请求返回的对象
 @property (nonatomic, strong) NSError *error;                         // 请求错误对象
@@ -39,6 +39,8 @@ typedef NS_ENUM(NSUInteger, SDataRequestState) {
 - (NSDictionary *)parameters;
 // 拿到数据以后提交数据 会自动走注册的回调
 - (void)submitData:(id)data;
+- (id)encryptionData:(id)data;
+- (id)decryptionData:(id)data;
 // 开始
 - (void)start;
 // 获得数据的方法 需要子类重写，拿到数据后，调用 submitData:

@@ -8,6 +8,10 @@
 
 #import "SDataRequest+AFNetworking.h"
 #import "SHTTPSessionManager.h"
+#import <objc/runtime.h>
+
+static NSString *s_dataTask_key = @"s_dataTask_key";
+
 @implementation SDataRequest (AFNetworking)
 - (SHTTPSessionManager *)HTTPSessionManager
 {
@@ -31,32 +35,47 @@
     return nil;
 }
 
-- (NSURLRequest *)URLRequestWithError:(NSError *)error
+- (id)cacheData
 {
-    return [self.HTTPSessionManager.requestSerializer requestWithMethod:[self requestMethod] URLString:[self URLString] parameters:self.parameters error:&error];
+    [self.HTTPSessionManager.session.configuration.URLCache getCachedResponseForDataTask:self.dataTask completionHandler:^(NSCachedURLResponse * _Nullable cachedResponse) {
+        
+    }];
+    return nil;
 }
 
 - (NSURLSessionDataTask *)dataTask
 {
-    NSError *serializationError;
-    NSURLRequest *request = [self URLRequestWithError:serializationError];
-    if (serializationError) {
-        self.error = serializationError;
-        [self submitData:nil];
-        return nil;
-    }
-    __block NSURLSessionDataTask *dataTask = nil;
-    dataTask = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
-        if (error) {
+    NSURLSessionDataTask* object = objc_getAssociatedObject(self, &s_dataTask_key);
+    if (!object) {
+        NSError *serializationError;
+        NSURLRequest *request = [self.HTTPSessionManager.requestSerializer requestWithMethod:[self requestMethod] URLString:[self URLString] parameters:self.parameters error:&serializationError];
+        
+        if (serializationError) {
             self.error = serializationError;
             [self submitData:nil];
-        } else {
-            self.error = serializationError;
-            [self submitData:responseObject];
+            return nil;
         }
-    }];
-    return dataTask;
+        
+        __block NSURLSessionDataTask *dataTask = nil;
+        dataTask = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+            if (error) {
+                self.error = serializationError;
+                [self submitData:nil];
+            } else {
+                self.error = serializationError;
+                [self submitData:responseObject];
+            }
+        }];
+        
+        objc_setAssociatedObject(self, &s_dataTask_key, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return object;
 }
+- (void)setDataTask:(NSURLSessionDataTask *)dataTask
+{
+    objc_setAssociatedObject(self, &s_dataTask_key, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 
 - (NSURLRequestCachePolicy)requestCachePolicy
 {

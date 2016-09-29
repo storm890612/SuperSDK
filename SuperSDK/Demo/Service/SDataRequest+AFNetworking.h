@@ -8,6 +8,8 @@
 
 #import "SDataRequest.h"
 #import "SHTTPSessionManager.h"
+
+
 @interface SDataRequest (AFNetworking)
 
 - (SHTTPSessionManager *)HTTPSessionManager;
@@ -16,9 +18,7 @@
 
 - (NSString *)URLString;
 
-- (NSURLRequest *)URLRequestWithError:(NSError *)error;
-
-- (NSURLSessionDataTask *)dataTask;
+@property (nonatomic, strong)NSURLSessionDataTask *dataTask;
 
 @property NSURLRequestCachePolicy requestCachePolicy;
 
