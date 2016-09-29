@@ -22,8 +22,6 @@
 		A84983701D32BFB200DB048C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983661D32BFB200DB048C /* AFURLResponseSerialization.m */; };
 		A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983681D32BFB200DB048C /* AFURLSessionManager.m */; };
 		A84983741D3BEAA600DB048C /* NSObject+SDataRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */; };
-		A84983771D4A617000DB048C /* SDataRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983761D4A617000DB048C /* SDataRequestOperation.m */; };
-		A849837A1D4A641400DB048C /* SDataRequestDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = A84983791D4A641400DB048C /* SDataRequestDemo.m */; };
 		A849837D1D50F97B00DB048C /* SDataRequestParser.m in Sources */ = {isa = PBXBuildFile; fileRef = A849837C1D50F97B00DB048C /* SDataRequestParser.m */; };
 		A84983801D51073600DB048C /* SDataRequestCallBackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A849837F1D51073600DB048C /* SDataRequestCallBackItem.m */; };
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
@@ -77,10 +75,6 @@
 		A84983681D32BFB200DB048C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		A84983721D3BEAA600DB048C /* NSObject+SDataRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SDataRequestManager.h"; sourceTree = "<group>"; };
 		A84983731D3BEAA600DB048C /* NSObject+SDataRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SDataRequestManager.m"; sourceTree = "<group>"; };
-		A84983751D4A617000DB048C /* SDataRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestOperation.h; sourceTree = "<group>"; };
-		A84983761D4A617000DB048C /* SDataRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataRequestOperation.m; sourceTree = "<group>"; };
-		A84983781D4A641400DB048C /* SDataRequestDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestDemo.h; sourceTree = "<group>"; };
-		A84983791D4A641400DB048C /* SDataRequestDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataRequestDemo.m; sourceTree = "<group>"; };
 		A849837B1D50F97B00DB048C /* SDataRequestParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestParser.h; sourceTree = "<group>"; };
 		A849837C1D50F97B00DB048C /* SDataRequestParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDataRequestParser.m; sourceTree = "<group>"; };
 		A849837E1D51073600DB048C /* SDataRequestCallBackItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestCallBackItem.h; sourceTree = "<group>"; };
@@ -257,10 +251,6 @@
 				A8F265B71D22E1890022D6AC /* SuperSDK */,
 				A8F265871D22E1500022D6AC /* AppDelegate.h */,
 				A8F265881D22E1500022D6AC /* AppDelegate.m */,
-				A84983751D4A617000DB048C /* SDataRequestOperation.h */,
-				A84983761D4A617000DB048C /* SDataRequestOperation.m */,
-				A84983781D4A641400DB048C /* SDataRequestDemo.h */,
-				A84983791D4A641400DB048C /* SDataRequestDemo.m */,
 				A8F265901D22E1500022D6AC /* Assets.xcassets */,
 				A8F265951D22E1500022D6AC /* Info.plist */,
 				A8F265841D22E1500022D6AC /* Supporting Files */,
@@ -434,7 +424,6 @@
 				A849836E1D32BFB200DB048C /* AFURLConnectionOperation.m in Sources */,
 				A8F1027A1D982F9800DA8E93 /* SDemoBaseViewController.m in Sources */,
 				A849836A1D32BFB200DB048C /* AFHTTPRequestOperationManager.m in Sources */,
-				A84983771D4A617000DB048C /* SDataRequestOperation.m in Sources */,
 				A84983801D51073600DB048C /* SDataRequestCallBackItem.m in Sources */,
 				A8F102701D982EEF00DA8E93 /* SDataOneDataRequest.m in Sources */,
 				A84983541D32BE8000DB048C /* SDataRequest.m in Sources */,
@@ -444,7 +433,6 @@
 				A8F265861D22E1500022D6AC /* main.m in Sources */,
 				A84983481D251E8100DB048C /* SQRView.m in Sources */,
 				A8F265BE1D22E8420022D6AC /* STools.m in Sources */,
-				A849837A1D4A641400DB048C /* SDataRequestDemo.m in Sources */,
 				A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

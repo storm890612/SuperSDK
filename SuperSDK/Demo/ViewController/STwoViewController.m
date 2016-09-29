@@ -37,14 +37,14 @@
 
 - (void)getDataOne
 {
-    [SDataRequestManager sendDataRequestByName:@"SDataOneDataRequest" parameters:@{@"name":@"getDataOne"} callBack:^(SDataRequest *dataRequest) {
+    [SDataRequestManager sendDataRequestByName:@"SDataOneDataRequest" parameters:nil callBack:^(SDataRequest *dataRequest) {
         NSLog(@"dataOneBlock = %@",dataRequest.responseData);
     }];
 }
 
 - (void)getDataTwo
 {
-    SDataRequest *dataRequestOne = [self s_registerDataRequestByName:@"SDataOneDataRequest" parameters:@{@"name":@"getDataOne"} target:self action:@selector(dataOne:)];
+    SDataRequest *dataRequestOne = [self s_registerDataRequestByName:@"SDataOneDataRequest" parameters:nil target:self action:@selector(dataOne:)];
     SDataRequest *dataRequestTwo = [self s_registerDataRequestByName:@"SDataTwoDataRequest" parameters:@{@"name":@"getDataTwo"} target:self action:@selector(dataTwo:)];
     [dataRequestOne addDependency:dataRequestTwo];
     [dataRequestOne start];

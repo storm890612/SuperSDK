@@ -18,6 +18,10 @@
 
 - (NSString *)URLString;
 
+- (void)cacheDataWithCompletionHandler:(void (^) (id cacheData))completionHandler;
+
+@property BOOL needCustomCacheData;
+
 @property (nonatomic, strong)NSURLSessionDataTask *dataTask;
 
 @property NSURLRequestCachePolicy requestCachePolicy;

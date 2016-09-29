@@ -17,6 +17,9 @@
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.URLCache = [NSURLCache sharedURLCache];
         manager = [[AFHTTPSessionManager alloc] initWithBaseURL:nil sessionConfiguration:configuration];
+        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
+        securityPolicy.allowInvalidCertificates = YES;
+        manager.securityPolicy = securityPolicy;
     });
     return (SHTTPSessionManager *)manager;
 }

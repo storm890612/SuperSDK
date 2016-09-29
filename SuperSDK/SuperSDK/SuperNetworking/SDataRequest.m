@@ -32,20 +32,10 @@
 {
     @synchronized (self) {
         if (self.state == SDataRequestStateExecuting) {
-            self.responseData = [self decryptionData:data];
+            self.responseData = data;
             self.state = SDataRequestStateFinished;
         }
     }
-}
-
-- (id)encryptionData:(id)data
-{
-    return data;
-}
-
-- (id)decryptionData:(id)data
-{
-    return data;
 }
 
 - (void)start

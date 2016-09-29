@@ -10,7 +10,8 @@
 #import "SHTTPSessionManager.h"
 #import <objc/runtime.h>
 
-static NSString *s_dataTask_key = @"s_dataTask_key";
+static NSString *s_dataTask = @"s_dataTask";
+static NSString *s_needCustomCacheData = @"s_needCustomCacheData";
 
 @implementation SDataRequest (AFNetworking)
 - (SHTTPSessionManager *)HTTPSessionManager
@@ -35,17 +36,28 @@ static NSString *s_dataTask_key = @"s_dataTask_key";
     return nil;
 }
 
-- (id)cacheData
+- (void)cacheDataWithCompletionHandler:(void (^) (id cacheData))completionHandler;
 {
     [self.HTTPSessionManager.session.configuration.URLCache getCachedResponseForDataTask:self.dataTask completionHandler:^(NSCachedURLResponse * _Nullable cachedResponse) {
-        
+        if (completionHandler) {
+            completionHandler(cachedResponse.data);
+        }
     }];
-    return nil;
 }
+
+- (BOOL)needCustomCacheData
+{
+    return [objc_getAssociatedObject(self, &s_needCustomCacheData) boolValue];
+}
+- (void)setNeedCustomCacheData:(BOOL)needCustomCacheData
+{
+    objc_setAssociatedObject(self, &s_needCustomCacheData, @(needCustomCacheData), OBJC_ASSOCIATION_ASSIGN);
+}
+
 
 - (NSURLSessionDataTask *)dataTask
 {
-    NSURLSessionDataTask* object = objc_getAssociatedObject(self, &s_dataTask_key);
+    __block NSURLSessionDataTask* object = objc_getAssociatedObject(self, &s_dataTask);
     if (!object) {
         NSError *serializationError;
         NSURLRequest *request = [self.HTTPSessionManager.requestSerializer requestWithMethod:[self requestMethod] URLString:[self URLString] parameters:self.parameters error:&serializationError];
@@ -56,29 +68,32 @@ static NSString *s_dataTask_key = @"s_dataTask_key";
             return nil;
         }
         
-        __block NSURLSessionDataTask *dataTask = nil;
-        dataTask = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        object = [self.HTTPSessionManager dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
             if (error) {
                 self.error = error;
                 [self submitData:nil];
             } else {
+                if ([self needCustomCacheData]) {
+                    NSCachedURLResponse *cachedURLResponse = [[NSCachedURLResponse alloc] initWithResponse:response data:responseObject userInfo:nil storagePolicy:NSURLCacheStorageAllowed];
+                    [self.HTTPSessionManager.session.configuration.URLCache storeCachedResponse:cachedURLResponse forDataTask:object];
+                }
                 self.error = nil;
                 [self submitData:responseObject];
             }
         }];
+        objc_setAssociatedObject(self, &s_dataTask, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-        objc_setAssociatedObject(self, &s_dataTask_key, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return object;
 }
 - (void)setDataTask:(NSURLSessionDataTask *)dataTask
 {
-    objc_setAssociatedObject(self, &s_dataTask_key, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &s_dataTask, dataTask, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSURLRequestCachePolicy)requestCachePolicy
 {
-    return NSURLRequestReloadRevalidatingCacheData;
+    return [SHTTPSessionManager sharedManager].session.configuration.requestCachePolicy;
 }
 - (void)setRequestCachePolicy:(NSURLRequestCachePolicy)requestCachePolicy
 {
@@ -87,37 +102,37 @@ static NSString *s_dataTask_key = @"s_dataTask_key";
 
 - (NSTimeInterval)timeoutIntervalForRequest
 {
-    return 10;
+    return [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForRequest;
 }
 - (void)setTimeoutIntervalForRequest:(NSTimeInterval)timeoutIntervalForRequest
 {
-    [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForRequest = [self timeoutIntervalForRequest];
+    [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForRequest = timeoutIntervalForRequest;
 }
 
 - (NSTimeInterval)timeoutIntervalForResource
 {
-    return 10;
+    return [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForResource;
 }
 - (void)setTimeoutIntervalForResource:(NSTimeInterval)timeoutIntervalForResource
 {
-    [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForResource = [self timeoutIntervalForResource];
+    [SHTTPSessionManager sharedManager].session.configuration.timeoutIntervalForResource = timeoutIntervalForResource;
 }
 
 - (NSURLRequestNetworkServiceType)networkServiceType
 {
-    return NSURLNetworkServiceTypeDefault;
+    return [SHTTPSessionManager sharedManager].session.configuration.networkServiceType;
 }
 - (void)setNetworkServiceType:(NSURLRequestNetworkServiceType)networkServiceType
 {
-    [SHTTPSessionManager sharedManager].session.configuration.networkServiceType = [self networkServiceType];
+    [SHTTPSessionManager sharedManager].session.configuration.networkServiceType = networkServiceType;
 }
 
 - (BOOL)allowsCellularAccess
 {
-    return YES;
+    return [SHTTPSessionManager sharedManager].session.configuration.allowsCellularAccess;
 }
 - (void)setAllowsCellularAccess:(BOOL)allowsCellularAccess
 {
-    [SHTTPSessionManager sharedManager].session.configuration.allowsCellularAccess = [self allowsCellularAccess];
+    [SHTTPSessionManager sharedManager].session.configuration.allowsCellularAccess = allowsCellularAccess;
 }
 @end
