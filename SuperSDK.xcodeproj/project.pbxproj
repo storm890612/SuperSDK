@@ -85,7 +85,7 @@
 		A87932761D998A5A00EACC6A /* SHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTTPSessionManager.h; sourceTree = "<group>"; };
 		A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTTPSessionManager.m; sourceTree = "<group>"; };
 		A87932831D9AD9A500EACC6A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A87932851DAE8A6E00EACC6A /* SDataRequestNetworkingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestNetworkingProtocol.h; sourceTree = "<group>"; };
+		A87932861DAEA41200EACC6A /* SDataRequestNetworkingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestNetworkingProtocol.h; sourceTree = "<group>"; };
 		A8EB94861D9CF013000C101C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
@@ -204,7 +204,6 @@
 				A8F1026F1D982EEF00DA8E93 /* SDataOneDataRequest.m */,
 				A8F102711D982F0400DA8E93 /* SDataTwoDataRequest.h */,
 				A8F102721D982F0400DA8E93 /* SDataTwoDataRequest.m */,
-				A87932851DAE8A6E00EACC6A /* SDataRequestNetworkingProtocol.h */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -218,6 +217,7 @@
 				A8F102791D982F9800DA8E93 /* SDemoBaseViewController.m */,
 				A87932761D998A5A00EACC6A /* SHTTPSessionManager.h */,
 				A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */,
+				A87932861DAEA41200EACC6A /* SDataRequestNetworkingProtocol.h */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
