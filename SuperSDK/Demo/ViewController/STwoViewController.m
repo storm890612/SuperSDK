@@ -7,10 +7,11 @@
 //
 
 #import "STwoViewController.h"
-
+#import "SDemoBaseDataRequest.h"
 @interface STwoViewController ()
 @property (nonatomic, strong) UIButton *buttonOne;
 @property (nonatomic, strong) UIButton *buttonTwo;
+@property (nonatomic, strong) UIButton *buttonThree;
 
 @end
 
@@ -22,6 +23,7 @@
     self.navigationItem.title = self.s_parameters[@"title"];
     [self.view addSubview:self.buttonOne];
     [self.view addSubview:self.buttonTwo];
+    [self.view addSubview:self.buttonThree];
 
 }
 
@@ -33,6 +35,9 @@
     self.buttonOne.frame = CGRectMake((self.view.frame.size.width - buttonWidth) / 2.0, 100, buttonWidth, buttonHeight);
     
     self.buttonTwo.frame = CGRectMake(CGRectGetMinX(self.buttonOne.frame), CGRectGetMaxY(self.buttonOne.frame) + 30, buttonWidth, buttonHeight);
+    
+    self.buttonThree.frame = CGRectMake(CGRectGetMinX(self.buttonTwo.frame), CGRectGetMaxY(self.buttonTwo.frame) + 30, buttonWidth, buttonHeight);
+
 }
 
 - (void)getDataOne
@@ -60,6 +65,14 @@
     NSLog(@"dataTwo = %@",dataRequest.responseData);
 }
 
+- (void)getDataOneCache
+{
+    SDemoBaseDataRequest *dataRequestOne = (SDemoBaseDataRequest *)[self s_registerDataRequestByName:@"SDataOneDataRequest" parameters:nil target:self action:@selector(dataOne:)];
+    [dataRequestOne cacheDataWithCompletionHandler:^(id cacheData) {
+        NSLog(@"cacheDataOne = %@",cacheData);
+    }];
+}
+
 - (UIButton *)buttonOne
 {
     if (!_buttonOne) {
@@ -80,6 +93,17 @@
         [_buttonTwo setBackgroundColor:[UIColor redColor]];
     }
     return _buttonTwo;
+}
+
+- (UIButton *)buttonThree
+{
+    if (!_buttonThree) {
+        _buttonThree = [UIButton new];
+        [_buttonThree setTitle:@"getDataOneCache" forState:UIControlStateNormal];
+        [_buttonThree addTarget:self action:@selector(getDataOneCache) forControlEvents:UIControlEventTouchUpInside];
+        [_buttonThree setBackgroundColor:[UIColor redColor]];
+    }
+    return _buttonThree;
 }
 
 @end

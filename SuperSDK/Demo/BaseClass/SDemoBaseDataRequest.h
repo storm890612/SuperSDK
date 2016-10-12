@@ -7,8 +7,7 @@
 //
 
 #import "SDataRequest.h"
-#import "SDataRequest+AFNetworking.h"
-
-@interface SDemoBaseDataRequest : SDataRequest
-
+#import "SDataRequestNetworkingProtocol.h"
+@interface SDemoBaseDataRequest : SDataRequest<SDataRequestNetworkingProtocol>
+- (id)packageData:(NSDictionary *)data;
 @end

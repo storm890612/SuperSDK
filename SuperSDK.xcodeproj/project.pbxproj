@@ -27,7 +27,6 @@
 		A84B81FE1D22F0E500DD3513 /* UINavigationController+SNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B81FD1D22F0E500DD3513 /* UINavigationController+SNavigationController.m */; };
 		A84B82011D22F0F200DD3513 /* SWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84B82001D22F0F200DD3513 /* SWebViewController.m */; };
 		A87932781D998A5A00EACC6A /* SHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */; };
-		A87932821D9AD79E00EACC6A /* SDataRequest+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A87932811D9AD79E00EACC6A /* SDataRequest+AFNetworking.m */; };
 		A87932841D9AD9A500EACC6A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A87932831D9AD9A500EACC6A /* Default-568h@2x.png */; };
 		A8EB948A1D9CFE28000C101C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EB94861D9CF013000C101C /* MediaPlayer.framework */; };
 		A8F1025A1D733B4700DA8E93 /* SWeakDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */; };
@@ -85,9 +84,8 @@
 		A84B82001D22F0F200DD3513 /* SWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWebViewController.m; sourceTree = "<group>"; };
 		A87932761D998A5A00EACC6A /* SHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTTPSessionManager.h; sourceTree = "<group>"; };
 		A87932771D998A5A00EACC6A /* SHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTTPSessionManager.m; sourceTree = "<group>"; };
-		A87932801D9AD79E00EACC6A /* SDataRequest+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDataRequest+AFNetworking.h"; sourceTree = "<group>"; };
-		A87932811D9AD79E00EACC6A /* SDataRequest+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDataRequest+AFNetworking.m"; sourceTree = "<group>"; };
 		A87932831D9AD9A500EACC6A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A87932851DAE8A6E00EACC6A /* SDataRequestNetworkingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDataRequestNetworkingProtocol.h; sourceTree = "<group>"; };
 		A8EB94861D9CF013000C101C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A8F102581D733B4700DA8E93 /* SWeakDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWeakDataRequest.h; sourceTree = "<group>"; };
 		A8F102591D733B4700DA8E93 /* SWeakDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWeakDataRequest.m; sourceTree = "<group>"; };
@@ -206,8 +204,7 @@
 				A8F1026F1D982EEF00DA8E93 /* SDataOneDataRequest.m */,
 				A8F102711D982F0400DA8E93 /* SDataTwoDataRequest.h */,
 				A8F102721D982F0400DA8E93 /* SDataTwoDataRequest.m */,
-				A87932801D9AD79E00EACC6A /* SDataRequest+AFNetworking.h */,
-				A87932811D9AD79E00EACC6A /* SDataRequest+AFNetworking.m */,
+				A87932851DAE8A6E00EACC6A /* SDataRequestNetworkingProtocol.h */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -410,7 +407,6 @@
 				A8F265891D22E1500022D6AC /* AppDelegate.m in Sources */,
 				A84983711D32BFB200DB048C /* AFURLSessionManager.m in Sources */,
 				A8F102771D982F7D00DA8E93 /* SDemoBaseDataRequest.m in Sources */,
-				A87932821D9AD79E00EACC6A /* SDataRequest+AFNetworking.m in Sources */,
 				A849836B1D32BFB200DB048C /* AFHTTPSessionManager.m in Sources */,
 				A8F102731D982F0400DA8E93 /* SDataTwoDataRequest.m in Sources */,
 				A8F1026D1D982AD500DA8E93 /* STwoViewController.m in Sources */,
