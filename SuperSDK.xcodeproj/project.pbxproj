@@ -325,7 +325,7 @@
 				A84B81FF1D22F0F200DD3513 /* SWebViewController.h */,
 				A84B82001D22F0F200DD3513 /* SWebViewController.m */,
 			);
-			name = SuperWebViewController;
+			path = SuperWebViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
