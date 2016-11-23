@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SuperSDK'
-  s.version      = '0.3.0'
+  s.version      = '1.0.0'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/storm890612/SuperSDK'
   s.authors      = { 'Superman' => 'storm890612@gmail.com' }
