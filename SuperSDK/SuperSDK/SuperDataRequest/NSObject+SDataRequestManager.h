@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SDataRequest.h"
+#import "SDataRequestManager.h"
 @interface NSObject (SDataRequestManager)
 @property (nonatomic, strong) NSMutableArray *s_dataRequests;
 - (SDataRequest *)s_sendRequestByName:(NSString *)name parameters:(NSDictionary *)parameters action:(SEL)action;
